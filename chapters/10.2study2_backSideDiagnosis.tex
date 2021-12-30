@@ -6,7 +6,7 @@ In this chapter, an overview of the new pre-diagnosis (i.e., side) will be discu
 
 The primary system focus will not be changed, which is discussed in Chapter \ref{chp:Foot Detection & Primary Diagnosis}. However, this chapter profoundly focuses on the changes made to the system. Therefore, changes in requirements and design decisions will be discussed in this section.
 
-As discussed in Section \ref{sec:StudyITestAndEvaluation}, a lack of supervision causes data to be unusable and unstable test environments. Therefore, the system should be used by healthcare officials or supervised.
+As discussed in Section \ref{sec:StudyITestAndEvaluation}, a lack of supervision causes data to be unusable and unstable test environments. Therefore, the system should be used by healthcare officials or supervised while used by participants.
 
 \begin{figure}[htbp]
 \centering
@@ -19,7 +19,7 @@ In addition, based on the remote image evaluations, there may be conflicting res
 
 \subsection{ PREDICTION AND FINE TUNE MODULE }
 
-The prediction module is consists of the end-user interactions and pre-diagnosis. However, for improving results and more accurate testing, pre-diagnosis should be disabled since healthcare professionals will guide the participants. On the other hand, fine-tune module is consists of background procedures and healthcare professionals' interactions. Likewise, healthcare interaction modules will not be used since all diagnoses should be produced on examination. In the following paragraphs, details of the changes will be discussed.
+The prediction module consists of the end-user interactions and pre-diagnosis. However, for improving results and more accurate testing, pre-diagnosis should be disabled since healthcare professionals will guide the participants. On the other hand, the fine-tune module consists of background procedures and healthcare professionals' interactions. Likewise, healthcare interaction modules will not be used since all diagnoses should be produced on examination. In the following paragraphs, details of the changes will be discussed.
 
 End-user interactions on prediction module should be updated to usable by the healthcare professionals for supervised data collection. Same application flow should be protected except for the minor modifications such as healthcare professionals should be able to enter the diagnosis of the patients.
 
@@ -100,7 +100,7 @@ This section will provide the test end evaluation process of the prototype syste
 
 In the second study, the test data were collected through mobile applications though healthcare officials supervision. Therefore collected data were evaluated before the process. In addition, healthcare officials were provided with the how-to-use document, which explains how to use the application. 
 
-The prototype was used by 9 participants, where 3 (33.33 \%) of them were female, and the remaining 6 (66,67 \%) were male, with an average age of 22.6 (see Table \ref{tab:StudyIParticipantStatistics} for details). Data is stored in online database which described in section \ref{sec:StudyIAnalysisAndDesign}. 
+The prototype was used by 9 participants, where 3 (33.33 \%) of them were female, and the remaining 6 (66,67 \%) were male, with an average age of 22.6 (see Table \ref{tab:StudyIParticipantStatistics} for details). Data is stored in an online database which is described in section \ref{sec:StudyIAnalysisAndDesign}. 
 
 \begin{figure}[htbp]
 \centering
@@ -127,4 +127,4 @@ There were 18 foot photos out of 18 foot pictures for processing since all data 
 \label{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}
 \end{figure} 
 
-After the data collection, automated index calculations were conducted. Initial results showed that the findings of the healthcare officials and the system were 27,7\% matched. This low performance may be caused by multiple factors such as image angle, color disorientation, assumptions in point location determination. However, the primary factor is sensitivity to rear foot angle calculation error which was the angle between the two lines was limited to five degrees (see Figure \ref{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}). 
+After the data collection, automated index calculations were conducted. Initial results showed that the findings of the healthcare officials and the system were 27,7\% matched. This low performance may be caused by multiple factors such as image angle, color disorientation, assumptions in point location determination. However, the primary factor is sensitivity to rear foot angle calculation error, in which was the angle between the two lines was limited to five degrees (see Figure \ref{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}). 

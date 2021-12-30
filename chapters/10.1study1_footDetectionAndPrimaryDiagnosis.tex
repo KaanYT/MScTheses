@@ -35,7 +35,7 @@ Our primary goal is to assist the medical staff in detecting pes planus and pes 
 
 Furthermore, all the services should not be accessible by unauthorized users since the system contains confidential information. Therefore, the same authorization process should be used in all information access. In addition, for research purposes, user data will be purified from user-identifying information when calculating measurement methods imposed by KVKK and GDPR, such as phone numbers.
 
-The system should contains two essential phrases in order to provide a stable service: the prediction and fine-tune modules. In addition, modules should support each other and improve the process, as shown in Figure \ref{fig:PredictionAndFinetuneModules}.
+The system should contain two essential phrases in order to provide a stable service: the prediction and fine-tune modules. In addition, modules should support each other and improve the process, as shown in Figure \ref{fig:PredictionAndFinetuneModules}.
 
 \subsection{ PREDICTION MODULE }
 
@@ -64,7 +64,7 @@ The survey is also part of the prediction module. Conducting surveys through the
 
 \subsection{ FINE-TUNE MODULE }
 
-The fine-tuning module, which is the central part, should include background procedures and healthcare professionals' interactions. As a result, two key functionalities should be included in this module: system enhancements and user interactions. Initially, healthcare professionals, also known as system managers, should review and analyze user-provided data, which should be used to refine system diagnoses. Eventually, the system should actively enhance the pre-diagnosis by using the data doctored and adjusted by the system management. A diagram of the the fine-tune module can be seen in Figure \ref{fig:FineTuneModuleDiagram}.
+The fine-tuning module, which is the central part, should include background procedures and healthcare professionals' interactions. Two key functionalities should be included in this module: system enhancements and user interactions. Initially, healthcare professionals, also known as system managers, should review and analyze user-provided data, which should be used to refine system diagnoses. Eventually, the system should actively enhance the pre-diagnosis by using the data doctored and adjusted by the system managers. A diagram of the the fine-tune module can be seen in Figure \ref{fig:FineTuneModuleDiagram}.
 
 
 \begin{figure}[htbp]
@@ -74,10 +74,10 @@ The fine-tuning module, which is the central part, should include background pro
 \label{fig:FineTuneModuleDiagram}
 \end{figure}
 
-A web application should be implemented for system managers to display and review the user input, such as foot images, previous diseases. In the web application, system managers should calculate foot types with objective measurement methods such as the Staheli arch index with provided images from the user. Consequently, this calculation will provide a proper analogy for System calculation and healthcare professionals' diagnosis. 
+A web application should be implemented for system managers to display and review the user input, such as foot images, previous diseases. In the web application, system managers should calculate foot types with objective measurement methods such as the Staheli arch index with provided images from the user. Consequently, this calculation will provide a proper analogy for system calculation and healthcare professionals' diagnosis. 
 
 
-System managers supply data orderly in dual circles; provide, validate (see Figure \ref{fig:FineTuneModuleWebApplicationActivityDiagram}). Healthcare professionals view patient information in the provided cycle and contribute foot type detection inputs. Information viewing involves primary data (BMI, Shoe Size),  patient complaints (pain level, pain duration), health history (surgeries and chronic diseases), and foot pictures. Afterward, foot type detection inputs are provided by health workers. As a result, the system should be able to calculate multiple foot indexes. In Figure \ref{fig:FineTuneModuleWebApplicationSequenceDiagram}, the sequence diagram of the fine-tune module can be seen.
+System managers supply data orderly in dual circles; provide, validate (see Figure \ref{fig:FineTuneModuleWebApplicationActivityDiagram}). Healthcare professionals view patient information in the provided cycle and contribute foot type detection inputs. Information viewing involves primary data (BMI, Shoe Size),  patient complaints (pain level, pain duration), health history (surgeries and chronic diseases), and foot pictures. Afterward, foot type detection inputs are provided by health workers. As a result of detection inputs, the system should be able to calculate multiple foot indexes. In Figure \ref{fig:FineTuneModuleWebApplicationSequenceDiagram}, the sequence diagram of the fine-tune module can be seen.
 
 \begin{figure}[htbp]
 \centering
@@ -95,7 +95,7 @@ At the end of the initial cycle, the system should calculate greatly accepted fo
 \label{fig:FineTuneModuleWebApplicationSequenceDiagram}
 \end{figure}
 
-The second cycle should provide calculated data to healthcare officials to validate results. The user should see how the results are calculated, related user data, and other meaningful information in this step. Consequently, healthcare professionals should decide to set data to the initial cycle, unusable, or approve the results. Moreover, approved results should be used in the batch process to improve the system performance. 
+The second cycle should provide calculated data to healthcare officials to validate results. The user should see how the results are calculated, related user data, and other meaningful information in this step. Consequently, healthcare professionals should decide to set data to following states; move to the initial cycle, unusable, approved. Moreover, approved results should be used in the batch process to improve the system performance. 
 
 Furthermore, the second cycle should also focus on preventing any user-related errors. Therefore, multiple calculation results, formulas, and corresponding result statuses (pes planus and pes cavus) should be displayed to reduce the errors. In addition, the system should be able to rewind the cycle to the initial state is based on healthcare professionals' decisions.
 
@@ -110,23 +110,23 @@ The batch process should be designed to improve the pre-diagnosis with the data 
 \label{fig:BatchProcessActivityDiagram}
 \end{figure}
 
-The batch should consist of four basic steps. The first step should be getting all the valid user-provided photos from the prediction module. Then, the system should process all the images on the current model and get the results. After the calculation, the batch process calculates percentage errors with provided data from healthcare professionals. Consequently, based on results and improvement strategy, the model is updated or not. Finally, all the calculations are redone when the model is updated until the best results are obtained. In Figure \ref{fig:BatchProcessActivityDiagram}, the activity diagram of the batch process can be seen.
+The batch process should consist of four basic steps. The first step should be getting all the valid user-provided photos from the prediction module. Then, the system should process all the images on the current model and get the results. After the calculation, the batch process calculates percentage errors with provided data from healthcare professionals. Consequently, based on results and improvement strategy, the model is updated or not. Finally, all the calculations are redone when the model is updated until the best results are obtained. In Figure \ref{fig:BatchProcessActivityDiagram}, the activity diagram of the batch process can be seen.
 
-In addition, the batch process should provide reports about the system's detailed and overview progress. Therefore, the batch process should calculate multiple errors. The overview results are a comparison of patients' diagnoses. As a result, this error calculation should provide how successful the system is as a product. In addition, the detailed error results should be used to improve the system in short cycles. Moreover, detailed errors calculations compare sub-findings of the system with the calculation points provided by health workers, such as points on the pictures used to identify foot structure. 
+In addition, the batch process should provide reports about the system's detailed and overview progress which contains calculated multiple errors. The overview results are a comparison of patients' diagnoses. As a result, this error calculation should provide how successful the system is as a product. In addition, the detailed error results should be used to improve the system in short cycles. Moreover, detailed errors calculations compare sub-findings of the system with the calculation points provided by health workers, such as points on the pictures used to identify foot structure. 
 
 \subsection{ FOOT INDEX CALCULATIONS }
 
-The system should use multiple methods to find the best approach and assist healthcare professionals in diagnosing patients successfully. Therefore, a fine-tune module system should provide foot indexes, navel-approved calculation methods used in the examination such as Arch Height Index, Chippaux-Smirak Index, Staheli Index, Clarkes Angle Calculation, Rearfoot Angle Calculation. 
+The system should use multiple methods to find the best approach and assist healthcare professionals in diagnosing patients successfully. Therefore, a fine-tune module system should provide foot indexes, calculation methods used in the examination such as Arch Height Index, Chippaux-Smirak Index, Staheli Index, Clarkes Angle Calculation, Rearfoot Angle Calculation. 
 
 Each calculation type requires its specialty to diagnose accurately, such as different angles of the foot structure. Therefore, the system focuses on a specific type of index calculation, the Arch Height Index, in an automated process to reduce errors. 
 
 The arch height index should be calculated using a single foot image. Therefore, this should reduce user workload and improve user experience. In addition, the arch height index requires an image of the foot containing the side of the foot to calculate the index type correctly. This image should be used to detect reference points on the side of the foot. 
 
-Other index calculations are not used for the automated process. They were used only with the data provided by healthcare professionals, which details are explained in the offline phase part. Instead, other index methods are used as reference methods for our calculations. This will allow us to compare different types of measurements. Consequently, select the best method for the mobile approach. The calculation details can be seen in Chapter \ref{chp:Methodology}.
+Other index calculations are not used for the automated process. They were used only with the data provided by healthcare professionals, which details are explained in the offline phase part. Instead, other index methods are used as reference methods for our calculations. This will allow us to compare different types of measurements. Consequently, the best method for the mobile approach will be selected. The calculation details can be seen in Chapter \ref{chp:Methodology}.
 
 \section{IMPLEMENTATION}\label{sec:StudyIImplementation}
 
-This section discusses the implementation details and decisions of the application. Therefore, each application is divided into its implementation section. In addition, this section starts with the development process, which explains applied development processes for each application.
+This section discusses the implementation details and decisions of the application. Therefore, each application is divided into its implementation section. In addition, this section starts with the development process subsection, which explains applied development processes for each application.
 
 \subsection{DEVELOPMENT PROCESS}
 
@@ -258,7 +258,7 @@ Most public datasets contain an entire human body other than a barefoot. Therefo
 \label{fig:BatchProcessMinimumBoundingBox}
 \end{figure}
 
-In addition, skin detection algorithms are also tested. Initially, the YCbCr color space-based skin detection algorithm was applied, but some lighting results were unusable. Therefore, the zero-sum game-based skin detection algorithm proposed by Dahmani et al. \cite{dahmani2020zero} is also tested (see Figure \ref{fig:DeepLearningTest}). Overall, the best performance was achived by DeepLabV3. 
+In addition, skin detection algorithms are also tested. Initially, the YCbCr color space-based skin detection algorithm was applied, but in some lighting detection results were unsuccessful. Therefore, the zero-sum game-based skin detection algorithm proposed by Dahmani et al. \cite{dahmani2020zero} is also tested (see Figure \ref{fig:DeepLearningTest}). Overall, the best performance was achived by DeepLabV3. 
 
 The second step deals with image preparation. After  potential barefoot is detected, a minimum area rectangle is calculated because the foot's location and angle might not be as accurate as demonstrated in the usage document. Therefore, perspective transformation is applied with the minimum area rectangle, eliminating potential angle problems (see Figure \ref{fig:BatchProcessMinimumBoundingBox}). In addition, this will move any foot on the image to the left corner of the image, which will ease the calculations.
 
@@ -326,9 +326,9 @@ Critical locations on the foot will be located based on the solo function. The b
 
 \subsection{DATABASE} \label{sec:StudyIDatabase}
 
-MySQL is selected for the primary database because it provides a high degree of data integrity. In addition, the data structure is not changing frequently, a relatively small amount of data (a small percentage of users) and most impotently data require a high degree of data integrity and security.
+MySQL is selected for the primary database because it provides a high degree of data integrity. In addition, the following reasons are also considered: the data structure is not changing frequently, a relatively small amount of data (a small percentage of users), and most importantly data require a high degree of data integrity and security.
 
-The database design was carried out within the drafts revealed due to the requirement analysis. In this process, tables were created based on the Normal forms, which were created to minimize errors and improve designs. Initially, three Normal forms were proposed: the first, second, and third normal forms. After that, fourth and fifth normal forms (Fifth Normal Form, 5NF) are proposed, based on the concepts of multivalued and join dependencies, respectively. Finally, all the normalization forms are taken into consideration during the database design, which is discussed in the following paragraphs.
+The database design was carried out within the drafts revealed due to the requirement analysis. In this process, tables were created based on the Normal forms, which were created to minimize errors and improve designs. Initially, three Normal forms were considered in the design: the first, second, and third normal forms. After that, fourth and fifth normal forms (Fifth Normal Form, 5NF) were also considered, based on the concepts of multivalued and join dependencies, respectively. Finally, all the de-normalization forms are taken into consideration during the database design.
 
 The database is divided into eight major table groups based on usage and connections: ScanFileInfo, FootScan, File, Training, DiseaseHistory, User, Survey, and Diagnosis. Those groups help us understand the concept more clearly (see Figure \ref{fig:DatabaseGeneralView}). 
 
@@ -339,7 +339,7 @@ The database is divided into eight major table groups based on usage and connect
 \label{fig:DatabaseGeneralView}
 \end{figure}
 
-User table group explicitly designed for user and its components consist of patient, foot, foot type, and gender. In addition, users have roles that help generalize the purpose, such as healthcare specialists or patients. Furthermore,  foot type is added for patients with different conditions, such as a prosthetic foot. 
+User table group explicitly designed for user and its components consist of patient, foot, foot type, and gender. In addition, users have roles that help generalize the table, such as healthcare specialists or patients. Furthermore,  foot type is added for patients with different conditions, such as a prosthetic foot. 
 
 \begin{figure}[htbp]
 \centering
