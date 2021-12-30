@@ -1,10 +1,10 @@
 \chapter{STUDY I - FOOT DETECTION AND PRIMARY DIAGNOSIS}\label{chp:Foot Detection & Primary Diagnosis}
 
-In this chapter, an overview of the primary system will be discussed. Unlike other systems, our approach will contain progressive updates with collected data over time. That is why the initial step contains basic structures to conduct the research. Accordingly, in Section \ref{sec:StudyIAnalysisAndDesign}, general system analysis and design decisions will be discussed. Then, Section \ref{sec:StudyIImplementation} covers implementation detail. Lastly, section \ref{sec:StudyITestAndEvaluation} initial test results and evaluation phase will be discussed.
+In this chapter, an overview of the primary system will be discussed. Unlike other systems, our approach will contain progressive updates with collected data over time. That is why the initial study contains fundamental structures to conduct the research. Accordingly, in Section \ref{sec:StudyIAnalysisAndDesign}, general system analysis and design decisions will be discussed. Then, Section \ref{sec:StudyIImplementation} covers implementation detail. Lastly, section \ref{sec:StudyITestAndEvaluation} contains initial test results and evaluation phase.
 
 \section{ANALYSIS AND DESIGN}\label{sec:StudyIAnalysisAndDesign}
 
-Preliminary detection of potential pes planus and pes cavus patients will be provided by the system. Therefore, end-user interface, healthcare interface, back-end services, and database are needed. Each structure will contain its development life-cycle to provide the best results. The general structure of the system can be seen in Figure \ref{fig:GeneralArchitectureDiagram}.
+Preliminary detection of potential pes planus and pes cavus patients will be provided by the system. Therefore, end-user interface, healthcare interface, back-end services, and database are needed. Each structure will contain its own development life-cycle to provide the best results. The general structure of the system can be seen in Figure \ref{fig:GeneralArchitectureDiagram}.
 
 \begin{figure}[htbp]
 \centering
@@ -16,13 +16,13 @@ Preliminary detection of potential pes planus and pes cavus patients will be pro
 Our primary goal is to assist the medical staff in detecting pes planus and pes cavus. Therefore, the system is based on a reduction of the workload of medical staff. The system should provide basic functional requirements and as well as non-functional requirements such as;
 \begin{itemize}
   \item Detection of pes planus and pes cavus with at most accuracy in provided images.
-  \item Detect predefined extreme cases and redirect users to immediate access.
-  \item Experts should have the ability to validate results manually.
-  \item Users should be able to display detection results.
-  \item Provide statistical reports about pes planus and pes cavus 
-  \item Provide the functionality to a wide range of users on multiple platforms.
+  \item Detect predefined extreme health cases and redirects users to healthcare professionals.
+  \item The system should have an interface where experts can manually verify the results.
+  \item Users should be able to view detection results.
+  \item System should provide statistical reports about pes planus and pes cavus  
+  \item System should provide the functionality to a wide range of users on multiple mobile platforms.
   \item All confidential information should be stored securely.
-  \item The system should be scalable for over-usage.
+  \item The system should be scalable for large scale usage.
   \item All essential information should be stored in non-volatile storage.
 \end{itemize}
 
@@ -33,13 +33,13 @@ Our primary goal is to assist the medical staff in detecting pes planus and pes 
 \label{fig:PredictionAndFinetuneModules}
 \end{figure}
 
-Furthermore, all the services should not be accessible by unauthorized users since all information provided to is confidential. Therefore, the same authorization process should be used in all information access. In addition, for research purposes, user data will be purified from user-identifying information when calculating measurement methods imposed by KVKK and GDPR, such as phone numbers.
+Furthermore, all the services should not be accessible by unauthorized users since the system contains confidential information. Therefore, the same authorization process should be used in all information access. In addition, for research purposes, user data will be purified from user-identifying information when calculating measurement methods imposed by KVKK and GDPR, such as phone numbers.
 
-The system should contains two essential phrases to increase the prediction rate: the prediction and fine-tune modules. In addition, modules should support each other and improve the process, as shown in Figure \ref{fig:PredictionAndFinetuneModules}.
+The system should contains two essential phrases in order to provide a stable service: the prediction and fine-tune modules. In addition, modules should support each other and improve the process, as shown in Figure \ref{fig:PredictionAndFinetuneModules}.
 
 \subsection{ PREDICTION MODULE }
 
-The prediction module should essentially consist of end-user interactions and pre-diagnosis of the foot. Therefore, remote access is one of the system's priorities to access health services without going to hospitals. To this end, capturing 95 percent of the mobile operating systems market is expected, corresponding to iOS and Android operating systems.
+The prediction module should essentially consist of end-user interactions and pre-diagnosis of the foot. Therefore, remote access is one of the system's priorities to access health services without going to hospitals. To this end, mobile applications should provide services to 95 percent of the mobile operating systems market is expected, corresponding to iOS and Android operating systems.
 
 In the prediction module, user information collection is one of the fundamental parts. Therefore information collection should be divided into three fundamental parts: essential, health, and foot information. 
 
