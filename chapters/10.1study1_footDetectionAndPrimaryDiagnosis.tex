@@ -1,10 +1,10 @@
 \chapter{STUDY I - FOOT DETECTION AND PRIMARY DIAGNOSIS}\label{chp:Foot Detection & Primary Diagnosis}
 
-In this chapter, an overview of the primary system will be discussed. Unlike other systems, our approach will contain progressive updates with collected data over time. That is why the initial study contains fundamental structures to conduct the research. Accordingly, in Section \ref{sec:StudyIAnalysisAndDesign}, general system analysis and design decisions will be discussed. Then, Section \ref{sec:StudyIImplementation} covers implementation detail. Lastly, section \ref{sec:StudyITestAndEvaluation} contains initial test results and evaluation phase.
+This chapter provides an overview of the primary system. Unlike other example solutions, the proposed approach will contain progressive updates with collected data over time. That is why the initial study contains fundamental structures to conduct the research. Accordingly, in Section \ref{sec:StudyIAnalysisAndDesign}, discuss  general system analysis and design decisions. Following Section \ref{sec:StudyIImplementation} covers detailed implementation of the prototype system. Lastly, Section \ref{sec:StudyITestAndEvaluation} presents evaluation phase and initial test results.
 
 \section{ANALYSIS AND DESIGN}\label{sec:StudyIAnalysisAndDesign}
 
-Preliminary detection of potential pes planus and pes cavus patients will be provided by the system. Therefore, end-user interface, healthcare interface, back-end services, and database are needed. Each structure will contain its own development life-cycle to provide the best results. The general structure of the system can be seen in Figure \ref{fig:GeneralArchitectureDiagram}.
+The system, when used by patients, calculates a preliminary detection of potential pes planus and pes cavus. Therefore, end-user interface, healthcare interface, back-end services, and database are needed. Each structure contains its own development life-cycle to provide the best results. The proposed structure of the system can be seen in Figure \ref{fig:GeneralArchitectureDiagram}.
 
 \begin{figure}[htbp]
 \centering
@@ -13,17 +13,17 @@ Preliminary detection of potential pes planus and pes cavus patients will be pro
 \label{fig:GeneralArchitectureDiagram}
 \end{figure}
 
-Our primary goal is to assist the medical staff in detecting pes planus and pes cavus. Therefore, the system is based on a reduction of the workload of medical staff. The system should provide basic functional requirements and as well as non-functional requirements such as;
+The goal of the study is to assist the medical staff in detecting pes planus and pes cavus. Therefore, the system is aiming to reduce the workload of medical staff. Accordingly, the system should provide basic functional requirements and as well as non-functional requirements which, are detailed below;
 \begin{itemize}
   \item Detection of pes planus and pes cavus with at most accuracy in provided images.
-  \item Detect predefined extreme health cases and redirects users to healthcare professionals.
-  \item The system should have an interface where experts can manually verify the results.
-  \item Users should be able to view detection results.
-  \item System should provide statistical reports about pes planus and pes cavus  
-  \item System should provide the functionality to a wide range of users on multiple mobile platforms.
-  \item All confidential information should be stored securely.
-  \item The system should be scalable for large scale usage.
-  \item All essential information should be stored in non-volatile storage.
+  \item Detects predefined extreme health cases and redirects users to healthcare professionals.
+  \item Verify the results manually with an interface for experts
+  \item View detection results
+  \item Provide statistical reports about pes planus and pes cavus  
+  \item Provide the functionality to a wide range of users on multiple mobile platforms.
+  \item Store all confidential information securely
+  \item Store all essential information in non-volatile storage
+  \item Design scalable system for large scale usage
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -35,17 +35,17 @@ Our primary goal is to assist the medical staff in detecting pes planus and pes 
 
 Furthermore, all the services should not be accessible by unauthorized users since the system contains confidential information. Therefore, the same authorization process should be used in all information access. In addition, for research purposes, user data will be purified from user-identifying information when calculating measurement methods imposed by KVKK and GDPR, such as phone numbers.
 
-The system should contain two essential phrases in order to provide a stable service: the prediction and fine-tune modules. In addition, modules should support each other and improve the process, as shown in Figure \ref{fig:PredictionAndFinetuneModules}.
+The system should contain two essential components in order to provide a stable service: the prediction and fine-tune modules. In addition, modules should support each other and improve the process, as shown in Figure \ref{fig:PredictionAndFinetuneModules}.
 
 \subsection{ PREDICTION MODULE }
 
-The prediction module should essentially consist of end-user interactions and pre-diagnosis of the foot. Therefore, remote access is one of the system's priorities to access health services without going to hospitals. To this end, mobile applications should provide services to 95 percent of the mobile operating systems market is expected, corresponding to iOS and Android operating systems.
+The prediction module should essentially consist of two parts, namely end user and pre-diagnosis algorithms. Therefore, remote access is one of the system's priorities which enables patients to receive health services without going to hospitals. To this end, mobile applications should provide services to 95 percent of the mobile operating systems in the market which are mainly made of iOS and Android operating systems.
 
-In the prediction module, user information collection is one of the fundamental parts. Therefore information collection should be divided into three fundamental parts: essential, health, and foot information. 
+In the prediction module, user information collection is one of the fundamental parts. Therefore information collection should be divided into three fundamental headings: essential, health, and foot information. 
 
-The essential information collection part focuses on differentiating end-users. Therefore, unique properties such as users' phone numbers or email addresses should be collected. Furthermore, gender, birth date, weight, and height should also be collected to analyze the population variance. In addition, the terms and conditions document also should be viewed and agreed to use the services provided, which explain the data usage and storage conditions of the users' data.
+The essential information collection part focuses on differentiating end-users. Therefore, unique properties such as users' phone numbers or email addresses should be collected as part of this heading. Furthermore, gender, birth date, weight, and height should also be collected to analyze the population variance.  Even if it is not related, the terms and conditions document also should be viewed and agreed under this heading. The terms and conditions part ask the user to confirm data usage and storage permission.
 
-The second part is the health information collection which should focus on detecting health issues related to pes planus and pes cavus. However, this part also requires the system to detect the evaluation requirement of health professionals for critical health issues. Therefore, the system should propose a direct call or appointment for the face-to-face examination between the user and health professional in such conditions. Furthermore, discovering critical health issues should be based on a rule-based system to reduce errors. In addition, this should be very limited to specified cases such as extreme pain levels.
+The second part is the health information collection which focus on detecting health issues related to pes planus and pes cavus. However, this part also requires the system to detect the evaluation requirement of health professionals for critical health issues. Therefore, the system should propose a direct call or appointment for the face-to-face examination between the user and health professional in such conditions. Furthermore, discovering critical health issues should be based on a rule-based system to reduce errors. However this is expected to be very limited to specified cases such as extreme pain levels.
 
 Finally, the foot information collection part should focus on detecting pes planus and pes cavus. Therefore, the degree of pain in physical activities, the degree of pain at night, and most importantly, pictures of the foot should be collected. In Figure \ref{fig:PredictionAndFinetuneModules}, the sequence diagram of the prediction module can be seen.
 
@@ -56,16 +56,15 @@ Finally, the foot information collection part should focus on detecting pes plan
 \label{fig:PredictionModuleSequenceDiagram}
 \end{figure}
 
-In the prediction module, the collected information should also inform health officials to reduce examination time. Besides that, it could also improve system performance by recollecting accurate diagnoses from health workers, which will be explained in the fine-tune module.
+In the prediction module, the collected information should also inform health in order to reduce examination time. Besides that, it could also improve system performance by adding new data from health workers, which will be explained in the fine-tune module.
 
 In addition, all end-user applications should be user-friendly and provide sufficient feedback information for users. This feedback will improve user satisfaction and reduce the overall process's time consumption, such as application usage instructions.
 
-The survey is also part of the prediction module. Conducting surveys through the end-user applications will allow the system to reduce shortcomings. Apart from these, surveys will also enable healthcare professionals to receive feedback on actively performed healing procedures. Some procedures require users to perform actions on a daily or weekly basis. Therefore surveying these actions to improve users' overall experience on digital healthcare is of utmost importance for the system to be usable.
+Last but not least, the prediction module collects statistical data as part of the survey. Conducting surveys through the end-user applications will allow the system to reduce UI shortcomings. Apart from these, the same surveys will also enable healthcare professionals to receive feedback on actively performed healing procedures. Some procedures require users to perform actions on a daily or weekly basis. Therefore surveying these actions to improve users' overall experience on digital healthcare is of utmost importance for the system to be more user friendly.
 
 \subsection{ FINE-TUNE MODULE }
 
-The fine-tuning module, which is the central part, should include background procedures and healthcare professionals' interactions. Two key functionalities should be included in this module: system enhancements and user interactions. Initially, healthcare professionals, also known as system managers, should review and analyze user-provided data, which should be used to refine system diagnoses. Eventually, the system should actively enhance the pre-diagnosis by using the data doctored and adjusted by the system managers. A diagram of the the fine-tune module can be seen in Figure \ref{fig:FineTuneModuleDiagram}.
-
+The fine-tuning module, which is the central part, should include background procedures and healthcare professionals' interface. In order to achieve this, the module should implement two functionality namely system enhancement and user interface. Accordingly, in order to provide  workflow, healthcare professionals, also known as system managers, should review and analyze user-provided data, which should be used to refine system diagnoses process. Eventually, the system should actively enhance the pre-diagnosis process by using the data doctored and adjusted by the system managers.
 
 \begin{figure}[htbp]
 \centering
@@ -74,10 +73,10 @@ The fine-tuning module, which is the central part, should include background pro
 \label{fig:FineTuneModuleDiagram}
 \end{figure}
 
-A web application should be implemented for system managers to display and review the user input, such as foot images, previous diseases. In the web application, system managers should calculate foot types with objective measurement methods such as the Staheli arch index with provided images from the user. Consequently, this calculation will provide a proper analogy for system calculation and healthcare professionals' diagnosis. 
+As can be seen in Figure \ref{fig:FineTuneModuleDiagram}, a web application should be implemented for system managers to display and review the user input, such as foot images, previous diseases. In the web application, system managers should be able to calculate foot types with objective measurement methods such as the Staheli arch index with provided images from the user. As a result of this calculation, there will be two results, one provided from the doctor, and one generated by the system which can be later compared.
 
 
-System managers supply data orderly in dual circles; provide, validate (see Figure \ref{fig:FineTuneModuleWebApplicationActivityDiagram}). Healthcare professionals view patient information in the provided cycle and contribute foot type detection inputs. Information viewing involves primary data (BMI, Shoe Size),  patient complaints (pain level, pain duration), health history (surgeries and chronic diseases), and foot pictures. Afterward, foot type detection inputs are provided by health workers. As a result of detection inputs, the system should be able to calculate multiple foot indexes. In Figure \ref{fig:FineTuneModuleWebApplicationSequenceDiagram}, the sequence diagram of the fine-tune module can be seen.
+System managers supply data in an orderly fashion in dual circles; provide, validate (see Figure \ref{fig:FineTuneModuleWebApplicationActivityDiagram}). Healthcare professionals view patient information in the provided cycle and contribute foot type detection inputs. Information viewing involves primary data (BMI, Shoe Size),  patient complaints (pain level, pain duration), health history (surgeries and chronic diseases), and foot pictures. Afterward, foot type detection inputs are provided by health workers. As a result of detection inputs, the system should be able to calculate multiple foot indexes. In Figure \ref{fig:FineTuneModuleWebApplicationSequenceDiagram}, the sequence diagram of the fine-tune module can be seen.
 
 \begin{figure}[htbp]
 \centering
@@ -86,7 +85,7 @@ System managers supply data orderly in dual circles; provide, validate (see Figu
 \label{fig:FineTuneModuleWebApplicationActivityDiagram}
 \end{figure}
 
-At the end of the initial cycle, the system should calculate greatly accepted foot indexes with healthcare professionals' assistance. These indexes should be pre-defined such as Chippaux-Smirak Index, Arch Height Index.
+At the end of the initial cycle, the system should calculate well known accepted foot indexes using key points obtained from healthcare professionals. These indexes should be pre-defined such as Chippaux-Smirak Index, Arch Height Index.
 
 \begin{figure}[htbp]
 \centering
@@ -95,7 +94,7 @@ At the end of the initial cycle, the system should calculate greatly accepted fo
 \label{fig:FineTuneModuleWebApplicationSequenceDiagram}
 \end{figure}
 
-The second cycle should provide calculated data to healthcare officials to validate results. The user should see how the results are calculated, related user data, and other meaningful information in this step. Consequently, healthcare professionals should decide to set data to following states; move to the initial cycle, unusable, approved. Moreover, approved results should be used in the batch process to improve the system performance. 
+The second cycle should provide the calculated data to healthcare officials to validate the results. The system user should see how the results are calculated, related user data, and other meaningful information in this second cycle. At this stage healthcare professionals can respond to each of the results as move to initial cycle, unusable or approved. Accordingly, the approved results should be used to improve batch process performance
 
 Furthermore, the second cycle should also focus on preventing any user-related errors. Therefore, multiple calculation results, formulas, and corresponding result statuses (pes planus and pes cavus) should be displayed to reduce the errors. In addition, the system should be able to rewind the cycle to the initial state is based on healthcare professionals' decisions.
 
