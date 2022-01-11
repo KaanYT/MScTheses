@@ -39,7 +39,7 @@ There are three types of learning methods: Supervised, Unsupervised, and Reinfor
 \label{fig:MachineLearningTypes}
 \end{figure}
 
-\subsection{SUPERVISED LEARNING}
+\subsection{Supervised Learning}
 
 In supervised learning, both the input and output values are feeded to the algorithm in the learning phase. Therefore in the learning stage, the application processes input values and compares the desired output values with the result of the application. The difference between expected and output is treated as an error. The error value is calculated by the performance function. Result of the performance function is returned to the system to minimize this error. As a result, this process continues until the error is minimized.
 
@@ -64,7 +64,7 @@ Supervised learning is used to tackle two types of problems: Regression and Clas
 
 There are two types of regression - namely, parametric and non-parametric. In parametric regression, the number of dimensions is predefined, such as Linear Regression and Ordinary Least Squares. On the other hand, non-parametric regression has no defined dimensions. As a result, regression models are often helpful in prediction, even if the assumptions are moderately wrong. Nevertheless, in many cases, regression models can not operate optimally. In the following paragraphs, we will examine a few Regression algorithms.
 
-The linear regression method is a statistical technique that establishes a linear relationship between the independent variable and the dependent variable to estimate the feature variable \cite{tan2016introduction}. In a linear regression equation, where an example is shown in equation \ref{linear_regression_equation}, \(x\) represents estimator for a problem, \(y\) is the response variable a the slope of the regression line is \(a_1\) and, \(b_1\) is the point at which the regression line intersects the ordinate axis.
+The linear regression method is a statistical technique that establishes a linear relationship between the independent variable and the dependent variable to estimate the feature variable \cite{tan2016introduction}. In a linear regression equation, where an example is shown in Equation \ref{linear_regression_equation}, \(x\) represents estimator for a problem, \(y\) is the response variable a the slope of the regression line is \(a_1\) and, \(b_1\) is the point at which the regression line intersects the ordinate axis.
 
 \begin{equation} \label{linear_regression_equation}
 y = a_1x + b_1x
@@ -80,7 +80,7 @@ K-Nearest Neighbor Algorithm (K-NN) is a memory-based classification, where its 
 d(x,y) = \sqrt{\sum_{j=1}^{N}(x_j - y_j)^2}
 \end{equation}
 
-The Euclidean Distance shown in equation \ref{euclidean_distance_equation} is commonly used to calculate the distance between observations. The smallest k is selected according to the distance values calculated here \cite{hall2008choice}.
+The Euclidean Distance shown in Equation \ref{euclidean_distance_equation} is commonly used to calculate the distance between observations. The smallest k is selected according to the distance values calculated here \cite{hall2008choice}.
 
 \begin{figure}[htbp]
 \centering
@@ -91,7 +91,7 @@ The Euclidean Distance shown in equation \ref{euclidean_distance_equation} is co
 
 Another classification algorithm is decision trees. They consist of internal decision nodes and end leaves (Figure \ref{fig:DecisionTreeExample}). A decision tree tries to establish which class the data with a particular class will be included in, starting from the node with the highest information gain \cite{hssina2014comparative}. One of the most commonly used algorithm to create a decision tree in data mining is the ID3. The main principle of the ID3 algorithm is to classify objects by testing the values of their attributes \cite{jin2009improved}.
 
-\subsection{UNSUPERVISED LEARNING}
+\subsection{Unsupervised Learning}
 
 The purpose of unsupervised learning is to model the underlying structure or distribution of the data to extract information from raw data. Unlike Supervised Learning, there is no data to guide the learning process. It is generally used for clustering, finding relationships between attributes and size reduction. Besides, the results obtained with the unsupervised learning algorithm can be used for supervised learning \cite{chao2011machine}.
 
@@ -111,7 +111,7 @@ KPCA is based on standard deviation, covariance, eigenvectors, and eigenvalues. 
 
 SFA uses a greedy approach which is very useful for computationally complex problems. However, it might produce unoptimized solutions. SFA reduces or generates attributes at each iteration until the required dimension size k is reached.
 
-\subsection{REINFORCEMENT LEARNING}
+\subsection{Reinforcement Learning}
 
 Reinforcement learning is based on the reward system, which helps evaluate results coming from the environment by adapting itself to the actions it encounters  \cite{sutton2018reinforcement}. Therefore, there is no testing and training phase in reinforcement learning. Instead, the reward system tries to give an insight into the environment by evaluating the outputs produced by the system as good or bad.
 
@@ -130,7 +130,7 @@ In digital image processing, analysis, and computer vision have made significant
 
 Digital image processing techniques consist of 3 different classes; these are low-level vision, mid-level vision, and high-level vision. Low-level vision algorithms are specifically digital image processing algorithms such as edges detection: their input and output are digital images. Mid-level vision algorithms consist of digital images as input and image properties as output such as object recognition, 3D reconstruction etc. High-level vision algorithms, on the other hand, uses the higher level of perception such as conceptual description of activity, intention and behavior \cite{pitas2000digital, gonzalez2002digital}. In the rest of this section, information about Low-Level Vision algorithms will be examined in detail.
 
-\subsection{DIGITAL IMAGE REPRESENTATION}
+\subsection{Digital Image Representation}
 
 The image is the visual representation of the object by the capturing luminance emitted from the source. The mathematical model underlying image formation is based on the emitting source (e.g., visible light, X-rays, ultrasonic rays), the physics of the interaction of the emitting object, and the system is used (see Figure \ref{fig:PhongReflectionModel}). Such a system usually includes an optical lens, optical sensor, and image digitizer \cite{pitas2000digital}.
 
@@ -150,7 +150,7 @@ Digital images are generated by hardware that measures radiated energy from the 
 \label{fig:EMSpectrumcolor}
 \end{figure}
 
-\subsection{BINARY, GREY-LEVEL AND COLOR IMAGES}
+\subsection{Binary, Grey-Level And Color Images}
 
 Binary images are the simplest form of imagery which can be typically represented as "black" and "white" or "0" and "1". A binary image assigns 1-bit to each pixel image which is enough to represent each pixel \cite{umbaugh2005computer, costa2000shape}. In addition, binary images are often produced according to a defined threshold value from gray-level images. Here, each pixel above the threshold value gets the value "1", and the one below the threshold value "0" \cite{umbaugh2005computer, costa2000shape}.
 
@@ -158,7 +158,7 @@ Gray-level images do not contain color information and only describe luminance i
 
 Color images are expressed using color models that contain three or more values for all pixels. Therefore, at least three two-dimensional matrices should express color images. Some of the most popular color display systems are RGB (Red, Green, Blue), CMY (greenish blue, magenta, yellow), and HIS (hue, vibrancy, intensity) \cite{costa2000shape}. If the 8-bit monochrome image is used as the standard model, the corresponding color image should be 24-bit, with 8 bits for all color bands (Red, green, blue) for each pixel \cite{umbaugh2005computer}.
 
-\subsection{IMAGE PROCESSING AND FILTERING}
+\subsection{Image Processing And Filtering}
 
 Image Processing can be used to remove noise from an image with a process that we can classify as image filtering. If an image has one or more noise, it should be filtered using appropriate techniques. Improved images with less noise can be obtained with special filter applications \cite{costa2000shape}
 
@@ -193,7 +193,7 @@ Convolution can be implemented with different kernels for various purposes such 
 
 The box blur which replaces each pixel value of an image with the average value, including its neighbors and itself. Therefore, this operation results in the disappearance of pixel values that are not representative of their surroundings. This type of filtering reduces the relative differences between the neighboring pixels of the image and improves contrast by reducing noise and smoothing.
 
-The second is the Gaussian filter, a convolution operator used to remove detail and noise and blur images. Therefore, it performs similar result to the box blur, but the Gaussian operator uses a different kernel, represented as a bell \cite{getreuer2013survey} (see equation \ref{gaussian_filter})
+The second is the Gaussian filter, a convolution operator used to remove detail and noise and blur images. Therefore, it performs similar result to the box blur, but the Gaussian operator uses a different kernel, represented as a bell \cite{getreuer2013survey} (see Equation \ref{gaussian_filter})
 
 \begin{equation} \label{gaussian_filter}
 G(x) = \frac{1} { {\sigma \sqrt {2\pi } } } 
@@ -209,7 +209,7 @@ The effect of the Gaussian operator is to blur the image, as in the box blur fil
 
 The last one is the median filter frequently used to reduce the noise in the images. As in the box blur, the median filter evaluates the pixels in the image together with the neighboring pixels. However, instead of taking the neighboring pixel values' average, it takes the neighboring pixel values' median and replaces the pixel value \cite{russ2010image}.
 
-\subsection{EDGE DETECTION}
+\subsection{Edge Detection}
 
 Edges are places in the image that have significant brightness changes. Therefore, edge detection is widely used to detect the object boundaries that usually occur in the image regions. In addition, creating the image with the edges of the image can significantly reduce the amount of data while retaining most of the image information \cite{russ2010image}.
 

@@ -37,7 +37,7 @@ Furthermore, all the services should not be accessible by unauthorized users sin
 
 The system should contain two essential components in order to provide a stable service: the prediction and fine-tune modules. In addition, modules should support each other and improve the process, as shown in Figure \ref{fig:PredictionAndFinetuneModules}.
 
-\subsection{ PREDICTION MODULE }
+\subsection{ Prediction Module }
 
 The prediction module should essentially consist of two parts, namely end user and pre-diagnosis algorithms. Therefore, remote access is one of the system's priorities which enables patients to receive health services without going to hospitals. To this end, mobile applications should provide services to 95 percent of the mobile operating systems in the market which are mainly made of iOS and Android operating systems.
 
@@ -47,7 +47,7 @@ The essential information collection part focuses on differentiating end-users. 
 
 The second part is the health information collection which focus on detecting health issues related to pes planus and pes cavus. However, this part also requires the system to detect the evaluation requirement of health professionals for critical health issues. Therefore, the system should propose a direct call or appointment for the face-to-face examination between the user and health professional in such conditions. Furthermore, discovering critical health issues should be based on a rule-based system to reduce errors. However this is expected to be very limited to specified cases such as extreme pain levels.
 
-Finally, the foot information collection part should focus on detecting pes planus and pes cavus. Therefore, the degree of pain in physical activities, the degree of pain at night, and most importantly, pictures of the foot should be collected. In Figure \ref{fig:PredictionAndFinetuneModules}, the sequence diagram of the prediction module can be seen.
+Finally, the foot information collection part should focus on detecting pes planus and pes cavus. Therefore, the degree of pain in physical activities, the degree of pain at night, and most importantly, pictures of the foot should be collected. In Figure \ref{fig:PredictionModuleSequenceDiagram}, the sequence diagram of the prediction module can be seen.
 
 \begin{figure}[htbp]
 \centering
@@ -62,7 +62,7 @@ In addition, all end-user applications should be user-friendly and provide suffi
 
 Last but not least, the prediction module collects statistical data as part of the survey. Conducting surveys through the end-user applications will allow the system to reduce UI shortcomings. Apart from these, the same surveys will also enable healthcare professionals to receive feedback on actively performed healing procedures. Some procedures require users to perform actions on a daily or weekly basis. Therefore surveying these actions to improve users' overall experience on digital healthcare is of utmost importance for the system to be more user friendly.
 
-\subsection{ FINE-TUNE MODULE }
+\subsection{ Fine-Tune Module }
 
 The fine-tuning module, which is the central part, should include background procedures and healthcare professionals' interface. In order to achieve this, the module should implement two functionality namely system enhancement and user interface. Accordingly, in order to provide  workflow, healthcare professionals, also known as system managers, should review and analyze user-provided data, which should be used to refine system diagnoses process. Eventually, the system should actively enhance the pre-diagnosis process by using the data doctored and adjusted by the system managers.
 
@@ -98,7 +98,7 @@ The second cycle should provide the calculated data to healthcare officials to v
 
 Furthermore, the second cycle should also focus on preventing any user-related errors. Therefore, multiple calculation results, formulas, and corresponding result statuses (pes planus and pes cavus) should be displayed to reduce the errors. In addition, the system should be able to rewind the cycle to the initial state is based on healthcare professionals' decisions.
 
-\subsection{ BATCH PROCESS }
+\subsection{ Batch Process }
 
 The batch process should be designed to improve the pre-diagnosis with the data provided from the prediction and fine-tune module. Besides being able to trigger manually, the batch process should be automated for continuous learning. Therefore, this will provide the system to improve itself over time through the data provided by the modules (doctors and patients). 
 
@@ -113,7 +113,7 @@ The batch process should consist of four basic steps. The first step should be g
 
 In addition, the batch process should provide reports about the system's detailed and overview progress which contains calculated multiple errors. The overview results are a comparison of patients' diagnoses. As a result, this error calculation should provide how successful the system is as a product. In addition, the detailed error results should be used to improve the system in short cycles. Moreover, detailed errors calculations compare sub-findings of the system with the calculation points provided by health workers, such as points on the pictures used to identify foot structure. 
 
-\subsection{ FOOT INDEX CALCULATIONS }
+\subsection{ Foot Index Calculations }
 
 The system should use multiple methods to find the best approach and assist healthcare professionals in diagnosing patients successfully. Therefore, a fine-tune module system should provide foot indexes, calculation methods used in the examination such as Arch Height Index, Chippaux-Smirak Index, Staheli Index, Clarkes Angle Calculation, Rearfoot Angle Calculation. 
 
@@ -127,7 +127,7 @@ Other index calculations are not used for the automated process. They were used 
 
 This section discusses the implementation details and decisions of the application. Therefore, each application is divided into its implementation section. In addition, this section starts with the development process subsection, which explains applied development processes for each application.
 
-\subsection{DEVELOPMENT PROCESS}
+\subsection{Development Process}
 
 Software engineering is one of the fastest-growing fields in computer science. Over the years, it has had some milestones in development processes. However, in general, iterative development in its core never changed. The most significant difference between the software development process is the reaction to changes in requirements. Therefore, we applied a hybrid model in our software development processes which are different in each application. This section will provide information regarding this decision and the reasons for it.
 
@@ -135,11 +135,11 @@ Client applications follow the prototype development process since collecting th
 
 On the other hand, batch processes were less prone to change and had no different types. Consequently, the waterfall development process is adopted. Furthermore, to respond quickly to client application changes, server APIs fundamentally embrace Agile development. As a result, it has continuously improved over its lifetime. 
 
-\subsection{END-USER APPLICATION}
+\subsection{End-User Application}
 
 The end-user system contains two distinct clients, which are iOS and Android. Client applications developed in mind usability, accessibility, inclusion, updated and improved during the application lifecycle. Consequently, this will improve the user experience and be satisfactory for all user groups.
 
-The iOS client is compatible with iOS 11 and forward, making it accessible for 99,7\% of the market share. Furthermore, mainly Swift programming language is used for the development of the client. Therefore, this makes it easy to support feature updates and compatibility for all the iOS ecosystems. 
+The iOS client is compatible with iOS 11 and forward, making it accessible for 99,7 percent of the market share. Furthermore, mainly Swift programming language is used for the development of the client. Therefore, this makes it easy to support feature updates and compatibility for all the iOS ecosystems. 
 
 \begin{figure}[htbp]
 \centering
@@ -148,7 +148,7 @@ The iOS client is compatible with iOS 11 and forward, making it accessible for 9
 \label{fig:UserApplicationUI}
 \end{figure}
 
-The android client is compatible with API level 16 and forward, making it accessible for 99,8\% of the market share. Furthermore, the Flutter software development kit is used in the development process, which requires Dart programming language. Therefore, this makes the software compatible with iOS and Android publishing. On the other hand, this process requires additional development. Therefore, the Flutter application is only using it for android clients. However, this could be used to reduce the development cost in the feature development process.
+The android client is compatible with API level 16 and forward, making it accessible for 99,8 percent of the market share. Furthermore, the Flutter software development kit is used in the development process, which requires Dart programming language. Therefore, this makes the software compatible with iOS and Android publishing. On the other hand, this process requires additional development. Therefore, the Flutter application is only using it for android clients. However, this could be used to reduce the development cost in the feature development process.
 
 Both end-user applications use the same user flow with corresponding platform UI specifications. Therefore this will enable users to complete their operations more comfortably with the UI they frequently use, shown in Figure \ref{fig:UserApplicationUI}. Furthermore, user documentation is also created to help smooth the user experience. This document contains all the information, from how to use it to the download links of the application. 
 
@@ -185,7 +185,7 @@ The most significant difference between iOS and Android clients is in the photo 
 
 Lastly, localization is one of the features of the client applications. Applications support multiple languages to increase usability in multiple regions in the world. In addition, supporting other languages would be straightforward as adding a new file to the application language file base. Furthermore, the client applications use operating system APIs to open the application in users' preferred language.
 
-\subsection{SPECIALIST INTERFACE} \label{sec:SpecialistInterface}
+\subsection{Specialist Interface} \label{sec:SpecialistInterface}
 
 Specialist interface is a web application whose primary purpose is to enable healthcare professionals to view patient data and diagnosis the patient based on the provided data. In the background, this process also improves the system by providing data to improve pre-diagnosis, which will be detailly discussed in the batch process. 
 
@@ -232,7 +232,7 @@ The web application contains validations to ensure current diagnosis. Therefore,
 
 In addition, The web application also provides helper functionalities to healthcare workers, such as critical point assistance, information boxes. For example, the arch height index requires finding the center of the points so that the critical point assistance displays (see Figure \ref{fig:WebApplicationCriticalPointAssistance}) the center based on the provided points. Another example is that information boxes provide simple reminders about indexes and set them (see Figure \ref{fig:WebApplicationInformationBoxes}).
 
-\subsection{SERVICES AND BATCH PROCESS} \label{sec:StudyIServicesAndBatchProcess}
+\subsection{Services And Batch Process} \label{sec:StudyIServicesAndBatchProcess}
 The application consists of two services: web and client application service. This structure provides scalability and security. Therefore, one service deals with end-user interactions and data transmission. At the same time, web service provides healthcare professionals and batch processes. With this separation, each service is placed in different layers. Therefore, this makes it possible that only client application services have internet access, increasing the web application security by limiting internet access.  In addition, this will provide more hardware intense operations (image processing, deep learning) to other physical servers. 
 
 Client application services adopt the microservice architecture for scalability and respond quickly to requirements. Furthermore, to prevent unauthorized access JWT (RFC 7519) is used. Lastly, all communications have been done by HTTP protocol with an SSL (RFC 6101). 
@@ -268,8 +268,7 @@ The second step deals with image preparation. After  potential barefoot is detec
 \label{fig:BatchProcessPerspectiveTransformation}
 \end{figure}
 
-After the perspective transformation, grayscale is required for edge detection algorithms for further processing. Therefore, RGB color space is converted to HSL because HSL has a separate lightness channel unrelated to foot detection. The S channel was selected (see Figure 5.5) for the grayscale conversation since S performed better than H in the small dataset.
-
+After the perspective transformation (see Figure \ref{fig:BatchProcessPerspectiveTransformation}), grayscale is required for edge detection algorithms for further processing. Therefore, RGB color space is converted to HSL because HSL has a separate lightness channel unrelated to foot detection. The S channel was selected for the grayscale conversation since S performed better than H in the small dataset.
 
 \begin{figure}[htbp]
 \centering
@@ -323,7 +322,7 @@ After the edges are extracted, polynomial regression is applied to generate the 
 
 Critical locations on the foot will be located based on the solo function. The bottom left, and right positions will be located with the solo function and minimum bounding box. Particular positions will be based on solo function values such as metatarsal, which starts the rise of the second curve determined as metatarsal.
 
-\subsection{DATABASE} \label{sec:StudyIDatabase}
+\subsection{Database} \label{sec:StudyIDatabase}
 
 MySQL is selected for the primary database because it provides a high degree of data integrity. In addition, the following reasons are also considered: the data structure is not changing frequently, a relatively small amount of data (a small percentage of users), and most importantly data require a high degree of data integrity and security.
 
@@ -338,7 +337,7 @@ The database is divided into eight major table groups based on usage and connect
 \label{fig:DatabaseGeneralView}
 \end{figure}
 
-User table group explicitly designed for user and its components consist of patient, foot, foot type, and gender. In addition, users have roles that help generalize the table, such as healthcare specialists or patients. Furthermore,  foot type is added for patients with different conditions, such as a prosthetic foot. 
+User table group explicitly designed for user and its components consist of patient, foot, foot type, and gender (see Figure \ref{fig:DatabaseUser}). In addition, users have roles that help generalize the table, such as healthcare specialists or patients. Furthermore,  foot type is added for patients with different conditions, such as a prosthetic foot. 
 
 \begin{figure}[htbp]
 \centering
@@ -356,7 +355,7 @@ The diagnosis table group focuses on foot diagnosis and detailed calculations me
 \label{fig:DatabaseDiagnosis}
 \end{figure}
 
-The ScanFileInfo, FootScan, File table groups are designed to record patient assets according to the examination type (see Figure \ref{fig:DatabaseGeneralView}). FootScan record examination type such as Foot Deformity or Rom Measurement. Each examination can have unlimited images recorded in the ScanFiles table with a type such as Bottom, Back Side. Each image might have essential locations recorded in the ScanFileLocation table, such as the side thumb. Lastly, file information such as file system locations is recorded in the File table. In addition, Each file contains a file type for processing. 
+The ScanFileInfo, FootScan, File table groups are designed to record patient assets according to the examination type (see Figure \ref{fig:DatabaseFiles}). FootScan record examination type such as Foot Deformity or Rom Measurement. Each examination can have unlimited images recorded in the ScanFiles table with a type such as Bottom, Back Side. Each image might have essential locations recorded in the ScanFileLocation table, such as the side thumb. Lastly, file information such as file system locations is recorded in the File table. In addition, Each file contains a file type for processing. 
 
 \begin{figure}[htbp]
 \centering
@@ -387,7 +386,7 @@ In the first study, the test data were collected through mobile applications wit
 \end{center}
 \end{table}
 
-The prototype was used by 34 participants, where 12 (35.29 \%) of them were female, and the remaining 22 (64,71 \%) were male, with an average age of 24 (see Table \ref{tab:StudyIParticipantStatistics} for details). In application, all participants are required to approve the consent form for the use of data. Data is stored in online database which described in section \ref{sec:StudyIAnalysisAndDesign}. 
+The prototype was used by 34 participants, where 12 (35.29 percent) of them were female, and the remaining 22 (64,71 percent) were male, with an average age of 24 (see Table \ref{tab:StudyIParticipantStatistics} for details). In application, all participants are required to approve the consent form for the use of data. Data is stored in online database which described in section \ref{sec:StudyIAnalysisAndDesign}. 
 
 \begin{figure}[htbp]
 \centering
@@ -416,7 +415,7 @@ After the physician results were collected, index calculations were conducted (s
 \label{fig:StudyIIndexErrorNormalDists}
 \end{figure}
 
-Initial results showed that the findings of the specialist and the system were 91.80\% matched. Even though these results showed great promise, this comparison was based on the class of the foot. Therefore, a more quantitative approach was necessary to asset the conducted test was accurate. Since automated algorithm critical points are not directly comparable with the specialist critical (the pre-diagnosis algorithm transforms the images), point intermediate and resulting findings are compared.
+Initial results showed that the findings of the specialist and the system were 91.80 percent matched. Even though these results showed great promise, this comparison was based on the class of the foot. Therefore, a more quantitative approach was necessary to asset the conducted test was accurate. Since automated algorithm critical points are not directly comparable with the specialist critical (the pre-diagnosis algorithm transforms the images), point intermediate and resulting findings are compared.
 
 Therefore, the system index errors were calculated, and normal distribution was piloted (see Figure \ref{fig:StudyIIndexErrorNormalDists}). Results were shown most of the results were in a small set of the error range. On the other hand, there are outliers with significant error rates. Those errors were primarily because of human errors, such as misplaced critical points or photos taken from the wrong angle. 
 
