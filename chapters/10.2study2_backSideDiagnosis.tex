@@ -1,10 +1,10 @@
 \chapter{STUDY II - BACK SIDE DIAGNOSIS}\label{chp:Back Side Diagnosis}
 
-In this chapter, an overview of the new pre-diagnosis (i.e., side) will be discussed—this system is based on Achilles tendonitis. Accordingly, general system analysis and design decisions will be addressed in Section \ref{sec:StudyIIAnalysisAndDesign}. Then, Section \ref{sec:StudyIIImplementation} delves into the specifics of implementation. Finally, in Section \ref{sec:StudyIITestAndEvaluation}, the initial test results and evaluation phase will be discussed.
+In this chapter, an overview of the new pre-diagnosis (i.e., side) will be discussed—this system is based on achilles tendon. Accordingly, general system analysis and design decisions will be addressed in Section \ref{sec:StudyIIAnalysisAndDesign}. Then, specifics of implementation will be reviewed in Section \ref{sec:StudyIIImplementation}, and finally, the initial test results and evaluation phase will be discussed in Section \ref{sec:StudyIITestAndEvaluation}
 
 \section{ANALYSIS AND DESIGN} \label{sec:StudyIIAnalysisAndDesign}
 
-The primary system focus will not be changed, which is discussed in Chapter \ref{chp:Foot Detection & Primary Diagnosis}. However, this chapter profoundly focuses on the changes made to the system. Therefore, changes in requirements and design decisions will be discussed in this section.
+In this section, the basic structures of the system discussed in Chapter \ref{chp:Foot Detection & Primary Diagnosis} have not been changed while analyzing and designing. In addition, this chapter was profoundly focused on the small changes made to the system. Changes in requirements and design decisions will be discussed in this section.
 
 As discussed in Section \ref{sec:StudyITestAndEvaluation}, a lack of supervision causes data to be unusable and unstable test environments. Therefore, the system should be used by healthcare officials or supervised while used by participants.
 
@@ -15,15 +15,17 @@ As discussed in Section \ref{sec:StudyITestAndEvaluation}, a lack of supervision
 \label{fig:GeneralArchitectureDiagramPartI}
 \end{figure}
 
-In addition, based on the remote image evaluations, there may be conflicting results based on the index usage, which is discussed in Section \ref{sec:StudyITestAndEvaluation}. Therefore, physicians' diagnosis results should be added after examinations to assess the diagnosis correctly. The general structure of the converted system can be seen in Figure \ref{fig:GeneralArchitectureDiagramPartI}. 
+Index results of healthcare professionals may conflict with each other due to remote image evaluations, which is discussed in Section \ref{sec:StudyITestAndEvaluation}. Therefore, healthcare professionals’ diagnosis results should be added after examinations to assess the diagnosis correctly. The general structure of the converted system can be seen in Figure \ref{fig:GeneralArchitectureDiagramPartI}.
 
 \subsection{ Prediction And Fine Tune Module }
 
-The prediction module consists of the end-user interactions and pre-diagnosis. However, for improving results and more accurate testing, pre-diagnosis should be disabled since healthcare professionals will guide the participants. On the other hand, the fine-tune module consists of background procedures and healthcare professionals' interactions. Likewise, healthcare interaction modules will not be used since all diagnoses should be produced on examination. In the following paragraphs, details of the changes will be discussed.
+The prediction module consists of end-user interactions and pre-diagnosis. However, for improving results and getting more accurate test results, pre-diagnosis should be disabled since healthcare professionals will guide the participants. 
 
-End-user interactions on prediction module should be updated to usable by the healthcare professionals for supervised data collection. Same application flow should be protected except for the minor modifications such as healthcare professionals should be able to enter the diagnosis of the patients.
+Another module, the fine-tune module, consists of background procedures and healthcare professionals' interactions. Also, the healthcare interaction module will not be used in this module since all deformities should be diagnosed on examination. In the following paragraphs, details of the changes will be discussed.
 
-In the requirement analysis, discussions were conducted with the health professionals where they expressed the importance of Achilles tendonitis in the diagnosis process. Therefore, the automated index calculation process should be based on the achilles tendon to pre-diagnosis more accurately.
+End-user interactions on prediction module should be updated to usable by the healthcare professionals for supervised data collection. Same application flow should be protected except for the minor modifications for example healthcare professionals should be able to enter the diagnosis results of the patients to application.
+
+In the needs analysis, the importance of the Achilles tendon in the diagnosis process was discussed with the health professionals and therefore it was decided to base the Achilles tendon in the automated index calculation process.
 
 \subsection{ Index Calculation }
 
@@ -37,7 +39,7 @@ Implementation details of the changed modules will be discussed in this section.
 
 \subsection{End-User Application}
 
-There were no significant changes in the en user application, but minor changes were made to improve the usability. Since users are not directly using the application, some user identification options are removed, such as phone numbers. In addition, some of the optional fields for students are also removed (see Figure \ref{fig:UserApplicationStudyIChanges}).
+In this section, there was no significant change in the end-user application, only minor changes have been made to improve usability. Since users are not directly using the application, some user identification options are removed, such as phone numbers. In addition, some of the optional fields for students are also removed such as student number (see Figure \ref{fig:UserApplicationStudyIChanges}).
 
 \begin{figure}[htbp]
 \centering
@@ -46,7 +48,7 @@ There were no significant changes in the en user application, but minor changes 
 \label{fig:UserApplicationStudyIChanges}
 \end{figure}
 
-In addition to compliance with the needs requirement analysis, some minor errors have been fixed such as default values and crashes. Furthermore, the diagnostic results were collected as if the doctors entered them, not as if they were taken from the patient.
+In addition to compliance with requirements analysis, some minor bugs such as default values and crashes have been fixed, and diagnostic results have been collected as if healtcare professionals had entered them, not as if they were taken from the patient.
 
 \subsection{Services And Batch Process}
 
