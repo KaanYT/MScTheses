@@ -1,6 +1,6 @@
 \chapter{STUDY I - FOOT DETECTION AND PRIMARY DIAGNOSIS}\label{chp:Foot Detection & Primary Diagnosis}
 
-This chapter provides an overview of the primary system. Unlike other example solutions, the proposed approach will contain progressive updates with collected data over time. That is why the initial study contains fundamental structures to conduct the research. Accordingly, in Section \ref{sec:StudyIAnalysisAndDesign}, discusses  general system analysis and design decisions. Section \ref{sec:StudyIImplementation} covers detailed implementation of the prototype system, and lastly, Section \ref{sec:StudyITestAndEvaluation} presents evaluation phase and initial test results.
+This chapter provides an overview of the primary system. Unlike other example solutions, the proposed approach will contain progressive updates with collected data over time. That is why the initial study contains fundamental structures to conduct the research. Accordingly, in Section \ref{sec:StudyIAnalysisAndDesign}, discusses general system analysis and design decisions. Section \ref{sec:StudyIImplementation} covers detailed implementation of the prototype system, and lastly, Section \ref{sec:StudyITestAndEvaluation} presents evaluation phase and initial test results.
 
 \section{ANALYSIS AND DESIGN}\label{sec:StudyIAnalysisAndDesign}
 
@@ -13,13 +13,13 @@ The system, when used by patients, calculates a preliminary detection of potenti
 \label{fig:GeneralArchitectureDiagram}
 \end{figure}
 
-The goal of the study is to assist the medical staff in detecting pes planus and pes cavus and reduce the workload of medical staff. The system to be formed at the end of the study, should provide basic functional requirements and as well as non-functional requirements which, are detailed below;
+The goal of the study is to assist the medical staff in detecting pes planus and pes cavus and reduce the workload of medical staff. The system to be formed at the end of the study should provide basic functional requirements and as well as non-functional requirements, which are detailed below;
 \begin{itemize}
   \item Detection of pes planus and pes cavus with at most accuracy in provided images.
   \item Detects predefined extreme health cases and redirects users to healthcare professionals.
   \item Verify the results manually with an interface for experts
   \item View detection results
-  \item Provide statistical reports about pes planus and pes cavus  
+  \item Provide statistical reports about pes planus and pes cavus
   \item Provide the functionality to a wide range of users on multiple mobile platforms.
   \item Store all confidential information securely
   \item Store all essential information in non-volatile storage
@@ -56,7 +56,7 @@ Finally, the foot information collection part should focus on detecting pes plan
 \label{fig:PredictionModuleSequenceDiagram}
 \end{figure}
 
-In the prediction module, the collected information should also inform health professionals in order to reduce examination time. Besides that, in Section \ref{sec:FineTuneModule} Fine Tune Module, the system performance improvement step, which is formed by adding new data to be obtained from health professionals, will be discussed.
+In the prediction module, the collected information should also inform health professionals in order to reduce examination time. Besides that, in Section \ref{sec:FineTuneModule}, Fine Tune Module, the system performance improvement step, which is formed by adding new data to be obtained from health professionals, will be discussed.
 
 In addition, all end-user applications should be user-friendly and provide sufficient feedback information for users. This feedback will improve user satisfaction and reduce the overall process's time consumption, such as application usage instructions.
 
@@ -64,7 +64,7 @@ Last but not least, the prediction module collects statistical data as part of t
 
 \subsection{ Fine-Tune Module }\label{sec:FineTuneModule}
 
-The fine-tuning module, which is the central part, should include background procedures and healthcare professionals' interface. In order to achieve this, the module should implement two functionality namely system enhancement and user interface. Accordingly, in order to provide  workflow, healthcare professionals, also known as system managers, should review and analyze user-provided data, which should be used to refine system diagnoses process. Eventually, the system should actively enhance the pre-diagnosis process by using the data doctored and adjusted by the system managers.
+The fine-tuning module, which is the central part, should include background procedures and healthcare professionals' interface. In order to achieve this, the module should implement two functionality namely system enhancement and user interface. Accordingly, in order to provide workflow, healthcare professionals, also known as system managers, should review and analyze user-provided data, which should be used to refine system diagnoses process. Eventually, the system should actively enhance the pre-diagnosis process by using the data doctored and adjusted by the system managers.
 
 \begin{figure}[htbp]
 \centering
@@ -76,7 +76,7 @@ The fine-tuning module, which is the central part, should include background pro
 As can be seen in Figure \ref{fig:FineTuneModuleDiagram}, a web application should be implemented for system managers to display and review the user input, such as foot images, previous diseases. In the web application, system managers should be able to calculate foot types with objective measurement methods such as the Staheli arch index with provided images from the user. As a result of this calculation, there will be two results, one provided from the doctor, and one generated by the system which can be later compared.
 
 
-System managers supply data in an orderly fashion in dual circles; provide, validate (see Figure \ref{fig:FineTuneModuleWebApplicationActivityDiagram}). Healthcare professionals view patient information in the provided cycle and contribute foot type detection inputs. Information viewing involves primary data (BMI, Shoe Size),  patient complaints (pain level, pain duration), health history (surgeries and chronic diseases), and foot pictures. Afterward, foot type detection inputs are provided by health workers. As a result of detection inputs, the system should be able to calculate multiple foot indexes. In Figure \ref{fig:FineTuneModuleWebApplicationSequenceDiagram}, the sequence diagram of the fine-tune module can be seen.
+System managers supply data in an orderly fashion in dual circles; provide, validate (see Figure \ref{fig:FineTuneModuleWebApplicationActivityDiagram}). Healthcare professionals view patient information in the provided cycle and contribute foot type detection inputs. Information viewing involves primary data (BMI, Shoe Size), patient complaints (pain level, pain duration), health history (surgeries and chronic diseases), and foot pictures. Afterward, foot type detection inputs are provided by health workers. As a result of detection inputs, the system should be able to calculate multiple foot indexes. In Figure \ref{fig:FineTuneModuleWebApplicationSequenceDiagram}, the sequence diagram of the fine-tune module can be seen.
 
 \begin{figure}[htbp]
 \centering
@@ -111,7 +111,7 @@ The batch process should be designed to improve the pre-diagnosis with the data 
 
 The batch process should consist of four basic steps. Firstly, the batch process should get all the valid user-provided photos from the prediction module. Then, the system should process all the images on the current model and calculate the results. After the calculation, the batch process should calculate percentage errors with provided data from healthcare professionals. Then, based on results and improvement strategy, the model is updated or not. Finally, all the calculations should be redone when the model is updated until the best results are obtained. In Figure \ref{fig:BatchProcessActivityDiagram}, the activity diagram of the batch process can be seen.
 
-In addition, the batch process should provide reports about the system's detailed and overview progress which contains calculated multiple errors. The overview results are a comparison of patients' diagnoses. As a result, this error calculation should provide how successful the system is as a product. Moreover, the detailed error results should be used to improve the system in short cycles. The detailed error calculation should use sub-findings of the system and the calculation points provided by health workers, such as points on the pictures used to identify foot structure. 
+In addition, the batch process should provide reports about the system's detailed and overview progress, which contains calculated multiple errors. The overview results are a comparison of patients' diagnoses. As a result, this error calculation should provide how successful the system is as a product. Moreover, the detailed error results should be used to improve the system in short cycles. The detailed error calculation should use sub-findings of the system and the calculation points provided by health workers, such as points on the pictures used to identify foot structure. 
 
 \subsection{ Foot Index Calculations }
 
@@ -133,7 +133,7 @@ Software engineering is one of the fastest-growing fields in computer science. O
 
 Client applications follow the prototype development process since collecting the data was crucial at the start of the development process. In addition, client applications contain dynamic composition where requirements change based on feedback. For example, only the iOS operating system was supported at the beginning of the project, but the Android prototype was also introduced due to the diverse mobile market and the users' need for android applications.
 
-On the other hand, batch processes which, the other application used in study 1, were less prone to change and had no different types. Therefore, the waterfall development process is adopted. In addition, the server APIs for rapid response to client application changes have continuously improved throughout its lifetime as it fundamentally embraces Agile development.
+On the other hand, batch processes, which used by the other application in Study I, were less prone to change and had no different types. Therefore, the waterfall development process is adopted. In addition, the server APIs for rapid response to client application changes have continuously improved throughout its lifetime as it fundamentally embraces Agile development.
 
 \subsection{End-User Application}
 
@@ -179,9 +179,9 @@ The shooting angle and feet pressuring the ground during the photos shooting are
 \label{fig:UserApplicationFeedback}
 \end{figure}
 
-Feedbacks are one of the most critical aspects of the user experience.  Therefore, multiple feedback mechanisms are developed in client applications to reduce communication errors. For example, since image uploading relatively takes more time than the other operations in the application, a progress bar with percentages is developed (see Figure \ref{fig:UserApplicationFeedback}). In addition, success screens are developed to indicate to users that the process is completed (see Figure \ref{fig:UserApplicationFeedback}).  
+Feedbacks are one of the most critical aspects of the user experience. Therefore, multiple feedback mechanisms are developed in client applications to reduce communication errors. For example, since image uploading relatively takes more time than the other operations in the application, a progress bar with percentages is developed (see Figure \ref{fig:UserApplicationFeedback}). In addition, success screens are developed to indicate to users that the process is completed (see Figure \ref{fig:UserApplicationFeedback}).
 
-The most important difference between iOS and Android processors is that some mobile phone models, provide different information other than raw image data during photo capture. Some of the Apple hardware contains LIDAR sensors. Therefore, the iOS client uses this hardware advantage and sends extra information to the service, which is the depth data. This depth information could be used to increase the accuracy of pre-diagnosis. In addition, depth data is converted to Point Cloud Data format before being transferred to the server for future updates for other systems.
+The most important difference between iOS and Android processors is that some mobile phone models provide information other than raw image data during photo capture. For example, some of the Apple hardware contains LIDAR sensors. Therefore, the iOS client uses this hardware advantage and sends extra information to the service, which is the depth data. This depth information could be used to increase the accuracy of pre-diagnosis. In addition, depth data is converted to Point Cloud Data format before being transferred to the server for future updates for other systems.
 
 Lastly, localization is one of the features of the client applications. Applications support multiple languages to increase usability in multiple regions in the world. In addition, supporting other languages would be straightforward as adding a new file to the application language file base. Furthermore, the client applications use operating system APIs to open the application in users' preferred language.
 
@@ -230,16 +230,16 @@ The web application contains validations to ensure current diagnosis. Thus, the 
 \label{fig:WebApplicationInformationBoxes}
 \end{figure}
 
-In addition, The web application also provides helper functionalities to healthcare workers, such as critical point assistance, information boxes. For example, the arch height index requires finding the center of the points therefore the critical point assistance displays (see Figure \ref{fig:WebApplicationCriticalPointAssistance}) the center of the points provided by the health professionals. Another example is that information boxes provide simple reminders about indexes (see Figure \ref{fig:WebApplicationInformationBoxes}).
+In addition, The web application also provides helper functionalities to healthcare workers such as critical point assistance and information boxes. For example, the arch height index requires finding the center of the points therefore the critical point assistance displays (see Figure \ref{fig:WebApplicationCriticalPointAssistance}) the center of the points provided by the health professionals. Another example is that information boxes provide simple reminders about indexes (see Figure \ref{fig:WebApplicationInformationBoxes}).
 
 \subsection{Services And Batch Process} \label{sec:StudyIServicesAndBatchProcess}
-The application consists of two services: web and client application service. This structure provides scalability and security. Therefore, one service deals with end-user interactions and data transmission. At the same time, web service provides healthcare professionals and batch processes. With this separation, each service is placed in different layers. Therefore, this makes it possible that only client application services have internet access, increasing the web application security by limiting internet access.  In addition, this will provide more hardware-intensive operations (image processing, deep learning) to other physical servers. 
+The application consists of two services: web and client application service. This structure provides scalability and security. Therefore, one service deals with end-user interactions and data transmission. At the same time, web service provides healthcare professionals and batch processes. With this separation, each service is placed in different layers. Therefore, this makes it possible that only client application services have internet access, increasing the web application security by limiting internet access. In addition, this will provide more hardware-intensive operations (image processing, deep learning) to other physical servers. 
 
 Client application services adopt the microservice architecture for scalability and respond quickly to requirements. Furthermore, to prevent unauthorized access JWT (RFC 7519) is used. Lastly, all communications have been done by HTTP protocol with an SSL (RFC 6101). 
 
 The batch process is the system's core, where the pre-diagnosis is done. The pre-diagnosis computation has three main steps: finding the region of interest, image pre-processing, and detection. Afterward, results are shared with the appropriate application and recorded in the database. In the following paragraphs, each step is detailly explained.
 
-The initial step requires finding the foot in the image, also called the region of interest (ROI). Since all the data is collected unsupervised, the foot can be anywhere in the image. Therefore, roughly location the foot for detail processing is essential. Deep learning algorithms are excellent in object recognition, but they require a vast amount of data to achieve this type of accuracy, so using deep learning algorithms for pre-diagnosis is close to impossible with the current dataset. As a result, the study uses pre-trained deep learning human detection algorithms to get a rough location of the foot.
+The initial step requires finding the foot in the image, also called the region of interest (ROI). Since all the data is collected unsupervised, the foot can be anywhere in the image. Therefore, roughly locating the foot for detail processing is essential. Deep learning algorithms are excellent in object recognition, but they require a vast amount of data to achieve this type of accuracy, so using deep learning algorithms for pre-diagnosis is close to impossible with the current dataset. As a result, the study uses pre-trained deep learning human detection algorithms to get a rough location of the foot.
 
 \begin{figure}[htbp]
 \centering
@@ -248,7 +248,7 @@ The initial step requires finding the foot in the image, also called the region 
 \label{fig:DeepLearningTest}
 \end{figure}
 
-The foot detection rate of the algorithms might not be as accredited as the announced results, because most public datasets contain an entire human body other than a barefoot. Therefore, multiple deep learning networks such as YOLO, MIDAS, FCN Resnet 101, DeepLabV3 have been tested in small datasets for best results (see Figure \ref{fig:DeepLearningTest}).
+The foot detection rate of the algorithms might not be as accredited as the announced results because most public datasets contain an entire human body other than a barefoot. Therefore, multiple deep learning networks such as YOLO, MIDAS, FCN Resnet 101, DeepLabV3 have been tested in small datasets for best results (see Figure \ref{fig:DeepLearningTest}).
 
 \begin{figure}[htbp]
 \centering
@@ -257,9 +257,9 @@ The foot detection rate of the algorithms might not be as accredited as the anno
 \label{fig:BatchProcessMinimumBoundingBox}
 \end{figure}
 
-In addition, skin detection algorithms are also tested. Initially, the YCbCr color space-based skin detection algorithm has been applied, but some lighting detection results have been unsuccessful. Therefore, the zero-sum game-based skin detection algorithm proposed by Dahmani et al. \cite{dahmani2020zero} is also tested (see Figure \ref{fig:DeepLearningTest}). Overall, the best performance has been achieved by DeepLabV3.
+In addition, skin detection algorithms are also tested. Initially, the YCbCr color space-based skin detection algorithm was applied, but detection results have been unsuccessful in some lighting conditions. Therefore, the zero-sum game-based skin detection algorithm proposed by Dahmani et al. \cite{dahmani2020zero} is also tested (see Figure \ref{fig:DeepLearningTest}). Overall, the best performance has been achieved by DeepLabV3.
 
-The second step deals with image preparation. After  potential barefoot is detected, a minimum area rectangle is calculated because the foot's location and angle might not be as accurate as demonstrated in the usage document. Therefore, perspective transformation is applied with the minimum area rectangle, eliminating potential angle problems (see Figure \ref{fig:BatchProcessMinimumBoundingBox}). In addition, this will move any foot on the image to the left corner of the image, which will ease the calculations.
+The second step deals with image preparation. After potential barefoot is detected, a minimum area rectangle is calculated because the foot's location and angle might not be as accurate as demonstrated in the usage document. Therefore, perspective transformation is applied with the minimum area rectangle, eliminating potential angle problems (see Figure \ref{fig:BatchProcessMinimumBoundingBox}). In addition, this will move any foot on the image to the left corner of the image, which will ease the calculations.
 
 \begin{figure}[htbp]
 \centering
@@ -268,7 +268,7 @@ The second step deals with image preparation. After  potential barefoot is detec
 \label{fig:BatchProcessPerspectiveTransformation}
 \end{figure}
 
-After the perspective transformation (see Figure \ref{fig:BatchProcessPerspectiveTransformation}), grayscale is required for edge detection algorithms. Therefore, RGB color space is converted to HSL because HSL has a separate lightness channel unrelated to foot detection. The S channel was selected for the grayscale conversation since S performed better than H in the small dataset.
+After the perspective transformation (see Figure \ref{fig:BatchProcessPerspectiveTransformation}), grayscale is required for edge detection algorithms. Therefore, RGB color space is converted to HSL because HSL has a separate lightness channel that can be eliminated. After all, lightness is unrelated to foot detection. The S channel was selected for the grayscale conversation since S performed better than H in the small dataset.
 
 \begin{figure}[htbp]
 \centering
@@ -293,7 +293,7 @@ The final stage includes edge detection and functionalization of the sole. The s
 \label{fig:BatchProcessEdge}
 \end{figure}
 
-After applying each configuration to the transformed image, results are merged into one with the algorithm  \ref{alg:CombinedSobelResults}, which reduces unwanted pixels (see Figure \ref{fig:BatchProcessEdge}). 
+After applying each configuration to the transformed image, results are merged into one with the algorithm \ref{alg:CombinedSobelResults}, which reduces unwanted pixels (see Figure \ref{fig:BatchProcessEdge}). 
 
 \begin{figure}[htbp]
 \centering
@@ -324,7 +324,7 @@ Critical locations on the foot will be located based on the solo function. For e
 
 \subsection{Database} \label{sec:StudyIDatabase}
 
-MySQL was selected for the primary database because it provides a high degree of data integrity. In addition, the following reasons were also considered in selection: the data structure is not changing frequently, a relatively contains small amount of data (a small percentage of users), and most importantly data require a high degree of data integrity and security.
+MySQL was selected for the primary database because it provides a high degree of data integrity. In addition, the following reasons were also considered in selection: the data structure is not changing frequently, a relatively contains a small amount of data (a small percentage of users), and most importantly, data require a high degree of data integrity and security.
 
 The database design (see Figure \ref{fig:DatabaseGeneralView}) was carried out within the drafts revealed due to the requirement analysis. In this process, tables were created based on the Normal forms, which were created to minimize errors and improve designs. Initially, three Normal forms were considered in the design: the first, second, and third normal forms. After that, fourth and fifth normal forms (Fifth Normal Form, 5NF) were also considered, based on the concepts of multivalued and join dependencies, respectively. Finally, all the de-normalization forms were taken into consideration during the database design.
 
@@ -355,7 +355,7 @@ The diagnosis table group focuses on foot diagnosis and detailed calculations me
 \label{fig:DatabaseDiagnosis}
 \end{figure}
 
-The ScanFileInfo, FootScan, File table groups were designed to record patient assets according to the examination type (see Figure \ref{fig:DatabaseFiles}). FootScan records examination type such as Foot Deformity or Rom Measurement. Each examination can have unlimited images recorded in the ScanFiles table with a type such as Bottom, Back Side. Each image might have essential locations recorded in the ScanFileLocation table, such as the side thumb. In addition, file information such as file system locations is recorded in the File table and each file contains a file type for processing.
+The ScanFileInfo, FootScan, File table groups were designed to record patient assets according to the examination type (see Figure \ref{fig:DatabaseFiles}). FootScan records examination type such as Foot Deformity or Rom Measurement. Each examination can have unlimited images recorded in the ScanFiles table with a type such as Bottom, Back Side. Each image might have essential locations recorded in the ScanFileLocation table, such as the side thumb. In addition, file information such as file system locations is recorded in the File table, and each file contains a file type for processing.
 
 \begin{figure}[htbp]
 \centering
@@ -370,7 +370,7 @@ Survey and Training table groups are used for the feedback and healing after def
 
 In this section, the test and evaluation process of the prototype system, which was explained in detail in the previous sections, will be discussed.
 
-In the first study, the test data were collected through mobile applications without any supervision. Therefore some of the data collected were not usable in the test and evaluation process. In addition, the data was mostly collected on the Yeditepe university students, which is a diverse population and participants were provided with the how-to-use document.
+In the first study, the test data were collected through mobile applications without any supervision. Therefore some of the data collected were not usable in the test and evaluation process. In addition, the data was mainly collected on the Yeditepe university students, which is a diverse population, and participants were provided with the how-to-use document.
 
 \begin{table}[htbp]
 \begin{center}
@@ -386,7 +386,7 @@ In the first study, the test data were collected through mobile applications wit
 \end{center}
 \end{table}
 
-The prototype was used by 34 participants, where 12 (35.29 percent) of them were female, and the remaining 22 (64,71 percent) were male, with an average age of 24 (see Table \ref{tab:StudyIParticipantStatistics} for details). Data which were provided by participants were stored in online database which described in section \ref{sec:StudyIAnalysisAndDesign}. 
+The prototype was used by 34 participants, where 12 (35.29 percent) of them were female, and the remaining 22 (64,71 percent) were male, with an average age of 24 (see Table \ref{tab:StudyIParticipantStatistics} for details). Data that were provided by participants were stored in an online database which is described in section \ref{sec:StudyIAnalysisAndDesign}. 
 
 \begin{figure}[htbp]
 \centering
@@ -406,7 +406,7 @@ The data collected from the users included 68 photos, 61 of them were used, but 
 \label{fig:StudyICriticalPointResult}
 \end{figure}
 
-After the physician results were collected, index calculations were conducted (see Figure  \ref{fig:StudyICriticalPointResult}). Even with specialists' critical points, the results vary based on the index type. However, even if the reference points vary, approaching specialists’ results will reveal the system's usability. Therefore, the initial study have been investigating the system set critical points, and the specialist set critical point differences.
+After the physician results were collected, index calculations were conducted (see Figure \ref{fig:StudyICriticalPointResult}). Even with specialists' critical points, the results vary based on the index type. However, even if the reference points vary, approaching specialists' results will reveal the system's usability. Therefore, the initial study has been investigating the system set critical points, and the specialist set critical point differences.
 
 \begin{figure}[htbp]
 \centering
@@ -426,4 +426,4 @@ Therefore, the system index errors were calculated, and normal distribution was 
 \label{fig:StudyILenghtErrorNormalDists}
 \end{figure}
 
-In addition, length error were calculated to see different perspective of the results (see Figure \ref{fig:StudyILenghtErrorNormalDists}). Even though those results showed similar results to index error, outliers were increased. This error increase was partially due to a perspective transformation of the images.
+In addition, length error was also calculated to see the effect of the perspective transformation in error calculation (see Figure \ref{fig:StudyILenghtErrorNormalDists}). Even though those results showed similar results to index error, outliers were increased. This error increase was partially due to a perspective transformation of the images.
