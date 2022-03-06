@@ -52,9 +52,9 @@ In addition to compliance with requirements analysis, some minor bugs such as de
 
 \subsection{Services And Batch Process}
 
-Except for minor adjustments and bug fixes, no significant changes in services have been made. Most of the changes were conducted in the batch process for different index calculations in the automated process. Therefore in this subsection, all the changes will be discussed. 
+In this section, no major changes were made to the services, except for minor adjustments and bug fixes. For the different index calculations in the automated process, most of the changes were conducted in the batch process. All these changes were explained in detail below.
 
-One of the most significant service adjustments is made in the API. Diagnosis by option is added, which were recorded in different fields in the database (see Section \ref{sec:StudyIDatabase} for details). In addition, user type control is added to prevent misconfiguration.
+One of the most significant service adjustments was made in the API. Diagnosis by option was added, which were recorded in different fields in the database (see Section \ref{sec:StudyIDatabase} for details). In addition, user type control was added to prevent misconfiguration.
 
 \begin{figure}[htbp]
 \centering
@@ -63,11 +63,11 @@ One of the most significant service adjustments is made in the API. Diagnosis by
 \label{fig:BatchProcessRioStudyII}
 \end{figure}
 
-The batch process calculation is redesigned from the start. Initially, the image types are differentiated for processing the correct images with correct index types. Therefore, the foot side type (see Section \ref{sec:StudyIDatabase} for details) is used for differentiation in the scan file (i.e., image).
+The batch process calculation was redesigned from the ground up. First, the image types were differentiated so that the correct images were processed with the correct index types. Therefore, the foot-side type (see Section \ref{sec:StudyIDatabase} for details) was used to differentiate in the scan file (i.e., in the image).
 
-After the correct image selection, detecting the foot and leg is crucial. Therefore, deep learning algorithms are applied to extract the region of interest. Finally, DeepLabV3 is used based on the experiences obtained in Section \ref{sec:StudyIServicesAndBatchProcess} to detect the region of interest (see Figure \ref{fig:BatchProcessRioStudyII}).
+After the correct image selection, the detection of the foot and leg is very important. Therefore, deep learning algorithms are applied to find the region of interest. In this study, DeepLabV3 was used to detect the region of interest, based on the experience obtained in Section \ref{sec:StudyIServicesAndBatchProcess} (see Figure \ref{fig:BatchProcessRioStudyII}).
 
-Fallowing the region of interest detection, critical points are detected. There are four critical points in rearfoot angle calculation (see Section for details \ref{sec:MethodologyFootDeformityDetection}). Each point requires specific points to be detected in the leg. In addition, each point is very close to the midpoint of the leg (see Figure \ref{fig:BatchProcessDotsStudyII}).
+Following the region of interest detection, critical points were detected. There are four critical points in rearfoot angle calculation (see Section for details \ref{sec:MethodologyFootDeformityDetection}). Each point requires specific points to be detected in the leg. In addition, each point is very close to the midpoint of the leg (see Figure \ref{fig:BatchProcessDotsStudyII}).
 
 \begin{figure}[htbp]
 \centering
@@ -76,15 +76,15 @@ Fallowing the region of interest detection, critical points are detected. There 
 \label{fig:BatchProcessDotsStudyII}
 \end{figure}
 
-The first point base of the calcaneus is calculated based on the region of interest. Processing starts from the bottom of the image, where the initial region is detected wideness of the area is recorded. In case of the region of interest errors, the processing is continued until 30 percent of the image width from the initial region detection. If new wideness is more significant than 50 percent of the initial detection, new area wideness is considered the calcaneus's base.
+The first point base of the calcaneus was calculated based on the region of interest. Processing was started from the bottom of the image, where the initial region is detected, wideness of the foot area was recorded. In case of the region of interest errors, the processing was continued until 30 percent of the image width from the initial region detection. If new wideness was more significant than 50 percent of the initial detection, new area wideness was considered the calcaneus's base.
 
-The second point determination is based on the assumption that the ankle is the thinnest area in the leg. Therefore, the narrowing of the leg is sought, following the first point discovery. After this region is found, it is considered the second broken point, which is 5 percent down by the region of interest. In addition, the third point has a similar discovery process. The only difference is that the third point is 5 percent up by the region of interest
+The second point determination is based on the assumption that the ankle is the thinnest area in the leg. Therefore, the narrowing of the leg was sought, following the first point discovery. After this region was found, the point that was 5 percent below the region of interest was considered as the second breakpoint. In addition, the third point had a similar discovery process. The only difference is that the third point was 5 percent up by the region of interest
 
-The fourth point corresponds to the narrowing point of the calf. Therefore, after the third point is found, narrowing is sought in the region.
+The fourth point corresponds to the narrowing point of the calf. Therefore, after the third point was found, narrowing was sought in the region.
 
 \section{TEST AND EVALUATION}\label{sec:StudyIITestAndEvaluation}
 
-This section will provide the test end evaluation process of the prototype system described in detail in previous sections. 
+In this section, the test and evaluation process of the prototype system, which was explained in detail in the previous sections, will be discussed.
 
 \begin{table}[htbp]
 \begin{center}
@@ -100,9 +100,9 @@ This section will provide the test end evaluation process of the prototype syste
 \end{center}
 \end{table}
 
-In the second study, the test data were collected through mobile applications though healthcare officials supervision. Therefore collected data were evaluated before the process. In addition, healthcare officials were provided with the how-to-use document, which explains how to use the application. 
+In the second study, test data were collected through mobile applications under the supervision of healthcare professionals. Therefore, the collected data were evaluated before the procedure. In addition, a document describing how to use the application was given to the healthcare professionals.
 
-The prototype was used by 9 participants, where 3 (33.33 percent) of them were female, and the remaining 6 (66,67 percent) were male, with an average age of 22.6 (see Table \ref{tab:StudyIIParticipantStatistics} for details). Data is stored in an online database which is described in section \ref{sec:StudyIAnalysisAndDesign}. 
+The prototype was used by 9 participants, where 3 (33.33 percent) of them were female, and the remaining 6 (66,67 percent) were male, with an average age of 22.6 (see Table \ref{tab:StudyIIParticipantStatistics} for details). Data was stored in an online database which is described in section \ref{sec:StudyIAnalysisAndDesign}.
 
 \begin{figure}[htbp]
 \centering
@@ -111,7 +111,7 @@ The prototype was used by 9 participants, where 3 (33.33 percent) of them were f
 \label{fig:StudyIIParticipantsBMITypeDistribution}
 \end{figure}
 
-BMI is critical since most of the index calculations are based on the ratio to remove the effects of the weight. Population's average BMI is 23.2 (healthy weight), ( see Figure \ref{fig:StudyIIParticipantsBMITypeDistribution}). Therefore, this might not provide sufficient data for projection in different wight scales.
+BMI is critical as most index calculations are based on the ratio to eliminate the effects of weight. Population's average BMI is 23.2 (healthy weight), (see Figure \ref{fig:StudyIIParticipantsBMITypeDistribution}). Therefore, this might not provide sufficient data for projection in different wight scales.
 
 \begin{figure}[htbp]
 \centering
@@ -120,7 +120,7 @@ BMI is critical since most of the index calculations are based on the ratio to r
 \label{fig:StudyIIFootDeformityTypeDistribution}
 \end{figure} 
 
-There were 18 foot photos out of 18 foot pictures for processing since all data were supervised. The healthcare specialists approved all the data provided to the system. Therefore participants' deformities are validated in the examination (see Figure  \ref{fig:StudyIIFootDeformityTypeDistribution}).
+All 18 photos collected in the application were used because during the collection of photos all users ware supervised by healthcare professionals. In addition, deformety types of the users were validated in the examination by healthcare professionals before sended to the system (see Figure  \ref{fig:StudyIIFootDeformityTypeDistribution}).
 
 \begin{figure}[htbp]
 \centering
@@ -129,4 +129,4 @@ There were 18 foot photos out of 18 foot pictures for processing since all data 
 \label{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}
 \end{figure} 
 
-After the data collection, automated index calculations were conducted. Initial results showed that the findings of the healthcare officials and the system were 27,7 percent matched. This low performance may be caused by multiple factors such as image angle, color disorientation, assumptions in point location determination. However, the primary factor is sensitivity to rear foot angle calculation error, in which was the angle between the two lines was limited to five degrees (see Figure \ref{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}). 
+After the data collection, automated index calculations were conducted. Initial results showed that the fiings of the healthcare officials and the system were 27,7 percent matched. This low performance may be caused by multiple factors such as image angle, color disorientation, assumptions in point location determination. However, it was thought that the biggest effect in the evaluations was the sensitivity of the Rear foot angle to the calculation error. Because this calculation only determines the deformity according to a difference of 5 degrees. It is very difficult to detect this 5 degree difference in the photos taken via the mobile application (see Figure \ref{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}). 
