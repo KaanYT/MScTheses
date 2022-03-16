@@ -1,0 +1,52 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{algorithm} 
+\usepackage{algpseudocode} 
+\usepackage{polynomial}
+\begin{document} 
+
+\begin{algorithm}
+	\caption{Study I - Proposed Algorithm} 
+	\begin{algorithmic}[1]
+	    \Procedure{pre-diagnosis}{$image$} \Comment{The Raw Image Of Inner Side}
+	        \State $segmentations\gets deepLabV3(image)$ \Comment{Pre-trained on COCO val2017 and backbone as ResNet-101}
+	        
+	        \State $humanSegment\gets humanSegment(segmentations)$
+	        \State $humanRect\gets calculateReactangle(humanSegment)$
+	        \State $minumumArea\gets calculateMinimumArea(humanRect)$
+	        \State $transformed\gets perspectiveTransformation(minumumArea)$
+	        \State $image_{alpha}\gets imageConvert(transformed,image)$
+	        \State $edges\gets edgeDetection(image_{alpha})$
+	        
+	        \State $bbsize\gets getBoundingBoxSize(image_{alpha})$
+	        
+	        \For {All bounding box of image} \Comment{Start from left corner of image}
+	            \For {All pixels in bounding box $pixels$}
+	                \State $soleFunction\gets applyRegression(pixels)$
+	            \EndFor
+	        \EndFor
+	        
+	        \State $criticalPoints\gets findCriticalPoints(soloFunction)$
+	        \State $footDeformityResult\gets calculateFootDeformity(criticalPoints)$ \Comment{Using Arch High Index)}
+	        \State \textbf{return} $footDeformityResult$\Comment{The results contains numerical information and type (Pes Planus, Pes Cavus or Normal)}
+    	\EndProcedure
+	\end{algorithmic} 
+\end{algorithm}
+
+\begin{algorithm}
+	\caption{Study II - Proposed Algorithm} 
+	\begin{algorithmic}[1]
+	    \Procedure{pre-diagnosis}{$image$} \Comment{Foot Back Side Photo}
+	        \State $rio\gets deepLabV3(image)$ \Comment{Pre-trained on COCO val2017 and backbone as ResNet-101}
+	        \State $calcaneus\gets detectCalcaneusBase(rio)$ \Comment{RIO error prevention applied. 30-50 Percent Rule - First Point}
+	        \State $ankle\gets findThinnestArea(rio)$
+	        \State $second\gets calculateSecondPoint(rio,ankle)$\Comment{5 Persent Down from Ankle}
+	        \State $third\gets calculateThirdPoint(rio,ankle)$\Comment{5 Persent Up from Ankle}
+	        \State $fourthPoint\gets findNarrowingPointCalf(rio)$
+	        \State $criticalPoints\gets calcaneus,second,third,fourthPoint$
+	        \State $footDeformityResult\gets calculateRearfootAngle(criticalPoints)$ \Comment{Using Rearfoot Angle)}
+	        \State \textbf{return} $footDeformityResult$\Comment{The results contains angle and type (Pes Planus, Pes Cavus or Normal)}
+    	\EndProcedure
+	\end{algorithmic} 
+\end{algorithm}
+
+\end{document}
