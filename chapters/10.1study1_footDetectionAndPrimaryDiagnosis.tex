@@ -39,7 +39,7 @@ The system should contain two essential components in order to provide a stable 
 
 \subsection{ Prediction Module }
 
-The prediction module should essentially consist of two parts, namely end-user and pre-diagnosis algorithms. The end-user application will provide remote access, which is one of the priorities of the system, to the user. Thus, patients will be provided with healthcare services without going to the hospital. To this end, mobile applications should provide services to 95 percent of the mobile operating systems in the market, which are mainly made of iOS and Android operating systems. After user information is collected through the end-user application, pre-diagnosis algorithms will be used to diagnose the user and provide results.
+The prediction module should essentially consist of two parts, namely end-user and pre-diagnosis application. The end-user application will provide remote access, which is one of the priorities of the system, to the user. Thus, patients will be provided with healthcare services without going to the hospital. To this end, mobile applications should provide services to 95 percent of the mobile operating systems in the market, which are mainly made of iOS and Android operating systems. After user information is collected through the end-user application, pre-diagnosis application will be used to diagnose the user and provide results.
 
 In the prediction module, user information collection is one of the fundamental parts. Information collection should be divided into three fundamental headings: essential, health, and foot information. 
 
@@ -64,7 +64,7 @@ Last but not least, the prediction module collects statistical data as part of t
 
 \subsection{ Fine-Tune Module }\label{sec:FineTuneModule}
 
-The fine-tuning module, which is the central part, should include background procedures and healthcare professionals' interface. In order to achieve this, the module should implement two functionality namely system enhancement and user interface. Accordingly, in order to provide workflow, healthcare professionals, also known as system managers, should review and analyze user-provided data, which should be used to refine system diagnoses process. Eventually, the system should actively enhance the pre-diagnosis process by using the data doctored and adjusted by the system managers.
+The fine-tuning module, which is the integral part, should include background procedures and healthcare professionals' interface. In order to achieve this, the module should implement two functionality namely system enhancement and user interface. Accordingly, in order to provide workflow, healthcare professionals, also known as system managers, should review and analyze user-provided data, which should be used to refine system diagnoses process. Eventually, the system should actively enhance the pre-diagnosis process by using the data doctored and adjusted by the system managers.
 
 \begin{figure}[htbp]
 \centering
@@ -100,7 +100,7 @@ Furthermore, the second cycle should also focus on preventing any user-related e
 
 \subsection{ Batch Process }
 
-The batch process should be designed to improve the pre-diagnosis with the data provided from the prediction and fine-tune module. Besides being able to trigger manually, the batch process should be automated for continuous learning. Therefore, this will provide the system to improve itself over time through the data provided by the modules (doctors and patients). 
+The batch process should be designed to improve the pre-diagnosis with the data provided from the prediction and fine-tune module. In addition, the batch process should be automated for continuous learning. Therefore, this will provide the system to improve itself over time through the data provided by the modules (doctors and patients). 
 
 \begin{figure}[htbp]
 \centering
@@ -109,7 +109,7 @@ The batch process should be designed to improve the pre-diagnosis with the data 
 \label{fig:BatchProcessActivityDiagram}
 \end{figure}
 
-The batch process should consist of four basic steps. Firstly, the batch process should get all the valid user-provided photos from the prediction module. Then, the system should process all the images on the current model and calculate the results. After the calculation, the batch process should calculate percentage errors with provided data from healthcare professionals. Then, based on results and improvement strategy, the model is updated or not. Finally, all the calculations should be redone when the model is updated until the best results are obtained. In Figure \ref{fig:BatchProcessActivityDiagram}, the activity diagram of the batch process can be seen.
+The batch process should consist of four basic steps. Firstly, the batch process should get all the valid user-provided photos from the prediction module. Then, the system should process all the images on the current model and calculate the results. After the calculation, the batch process should calculate percentage errors with provided data from healthcare professionals. Then, based on results improvements, the model is updated or not. Finally, all the calculations should be redone when the model is updated until the best results are obtained. In Figure \ref{fig:BatchProcessActivityDiagram}, the activity diagram of the batch process can be seen.
 
 In addition, the batch process should provide reports about the system's detailed and overview progress, which contains calculated multiple errors. The overview results are a comparison of patients' diagnoses. As a result, this error calculation should provide how successful the system is as a product. Moreover, the detailed error results should be used to improve the system in short cycles. The detailed error calculation should use sub-findings of the system and the calculation points provided by health workers, such as points on the pictures used to identify foot structure. 
 
@@ -129,9 +129,9 @@ This section discusses the implementation details and decisions of the study. Th
 
 \subsection{Development Process}
 
-Software engineering is one of the fastest-growing fields in computer science. Over the years, it has had some milestones in development processes. However, in general, iterative development in its core has never changed. The most significant difference in software development processes is the reaction to changes in requirements. Therefore, we applied a hybrid model in our software development processes which are different in each application. This section will provide information regarding this decision and the reasons for it.
+Software engineering is one of the fastest-growing fields in computer science. Over the years, it has had some milestones in development processes. However, in general, iterative development in its core has never changed. The most significant difference in software development processes is the reaction to changes in requirements. Therefore,  a hybrid model of software development processes is applied, which are different in each application. This section will provide information regarding this decision and the reasons for it.
 
-Client applications follow the prototype development process since collecting the data was crucial at the start of the development process. In addition, client applications contain dynamic composition where requirements change based on feedback. For example, only the iOS operating system was supported at the beginning of the project, but the Android prototype was also introduced due to the diverse mobile market and the users' need for android applications.
+Client applications follow the prototype development process since collecting the data was crucial at the start of the development process. In addition, client applications contain dynamic composition where requirements change based on feedback. For example, only the iOS operating system was supported at the beginning of the project, but the Android prototype was also introduced due to the diverse mobile market and the users' need for Android applications.
 
 On the other hand, batch processes, which used by the other application in Study I, were less prone to change and had no different types. Therefore, the waterfall development process is adopted. In addition, the server APIs for rapid response to client application changes have continuously improved throughout its lifetime as it fundamentally embraces Agile development.
 
@@ -148,7 +148,7 @@ The iOS client is compatible with iOS 11 and forward, making it accessible for 9
 \label{fig:UserApplicationUI}
 \end{figure}
 
-The android client is compatible with API level 16 and forward, making it accessible for 99,8 percent of the market share. Furthermore, the Flutter software development kit is used in the development process, which requires Dart programming language. Therefore, this makes the software compatible with iOS and Android publishing. On the other hand, the Flutter application is only used for android clients as this process requires additional development. However, this feature can also be used in the future development process to reduce development costs.
+The Android client is compatible with API level 16 and forward, making it accessible for 99,8 percent of the market share. Furthermore, the Flutter software development kit is used in the development process, which requires Dart programming language. Therefore, this makes the software compatible with iOS and Android publishing. On the other hand, the Flutter application is only used for Android clients as this process requires additional development. However, this feature can also be used in the future development process to reduce development costs.
 
 Both end-user applications use the same user flow with corresponding platform UI specifications. Therefore this will enable users to complete their operations more comfortably with the UI they frequently use, shown in Figure \ref{fig:UserApplicationUI}. Furthermore, user documentation is also created to help smooth the user experience. This document contains all the information, from how to use it to the download links of the application. 
 
@@ -161,7 +161,7 @@ Both end-user applications use the same user flow with corresponding platform UI
 
 Even though end-user documentation is created, client applications always consider user mistakes and misunderstandings. Therefore, input validation and feedback are implemented through the application. These validations include input type, max-min character, logical validations, and many more, shown in Figure \ref{fig:UserApplicationValidations}, to improve users' experience. In addition, user tutorials are also added to guide the user, which is shown in Figure \ref{fig:UserApplicationOnboarding}.
 
-The image collection is a fundamentally similar process for both clients. This process includes taking a photo or taking it from the gallery. After that, since image sizes are different in different hardware, applications resize the image and transfer it in base64 format. Furthermore, file compression is used to reduce the traffic when transmitting the images from client to server. Deflate, a lossless compression format, is selected for compassion since it is a widely used open-source compression algorithm available in major operating systems. In addition, there is a file format validation on clients for gallery-selected images. 
+The image collection is a fundamentally similar process for both clients. This process includes taking a photo or taking it from the gallery. After that, since image sizes would be different in different hardware, iOS and Android prototype applications resizes the image and transfer it in base64 format. Furthermore, file compression is used to reduce the traffic when transmitting the images from client to server. Deflate, a lossless compression format, is selected for compassion since it is a widely used open-source compression algorithm available in major operating systems. In addition, there is a file format validation on clients for gallery-selected images. 
 
 \begin{figure}[htbp]
 \centering
@@ -257,7 +257,7 @@ The foot detection rate of the algorithms might not be as accredited as the anno
 \label{fig:BatchProcessMinimumBoundingBox}
 \end{figure}
 
-In addition, skin detection algorithms are also tested. Initially, the YCbCr color space-based skin detection algorithm was applied, but detection results have been unsuccessful in some lighting conditions. Therefore, the zero-sum game-based skin detection algorithm proposed by Dahmani et al. \cite{dahmani2020zero} is also tested (see Figure \ref{fig:DeepLearningTest}). Overall, the best performance has been achieved by DeepLabV3.
+In addition, skin detection algorithms are also tested. Initially, the YCbCr color space-based skin detection algorithm was applied, but detection results have been unsuccessful in some lighting conditions. Therefore, the zero-sum game-based skin detection algorithm proposed by Dahmani et al. \cite{dahmani2020zero} is also tested (see Figure \ref{fig:DeepLearningTest}). Overall, the best performance is achieved by DeepLabV3.
 
 The second step deals with image preparation. After potential barefoot is detected, a minimum area rectangle is calculated because the foot's location and angle might not be as accurate as demonstrated in the usage document. Therefore, perspective transformation is applied with the minimum area rectangle, eliminating potential angle problems (see Figure \ref{fig:BatchProcessMinimumBoundingBox}). In addition, this will move any foot on the image to the left corner of the image, which will ease the calculations.
 
@@ -337,7 +337,7 @@ The database was divided into eight major table groups based on usage and connec
 \label{fig:DatabaseGeneralView}
 \end{figure}
 
-User table group explicitly were designed for user and its components consist of patient, foot, foot type, and gender (see Figure \ref{fig:DatabaseUser}). In addition, users were had roles that help generalize the table, such as healthcare specialists or patients. Furthermore, foot type was added for patients with different conditions, such as a prosthetic foot.
+User table group were explicitly designed for all application users, which includes end-users, healthcare professionals and admins. Its components consist of patient, foot, foot type, and gender (see Figure \ref{fig:DatabaseUser}). In addition, users have had roles that help generalize the table, such as healthcare specialists or patients. Furthermore, foot type was added for patients with different conditions, such as a prosthetic foot.
 
 \begin{figure}[htbp]
 \centering

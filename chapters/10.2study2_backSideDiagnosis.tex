@@ -6,7 +6,7 @@ In this chapter, an overview of the new pre-diagnosis (i.e., diagnosis based on 
 
 In this section, the basic structures of the system discussed in Chapter \ref{chp:Foot Detection & Primary Diagnosis} have not been changed while analyzing and designing. In addition, this chapter was profoundly focused on the small changes made to the system. Changes in requirements and design decisions will be discussed in this section.
 
-As discussed in Section \ref{sec:StudyITestAndEvaluation}, a lack of supervision causes data to be unusable and unstable test environments. Therefore, the system should be used by healthcare officials or supervised while used by participants.
+As discussed in Section \ref{sec:StudyITestAndEvaluation}, lack of supervision causes data to be unusable and unstable test environments. Therefore, the system should be used by healthcare officials or supervised while used by participants.
 
 \begin{figure}[htbp]
 \centering
@@ -21,7 +21,7 @@ Index results of healthcare professionals may conflict with each other due to re
 
 The prediction module consists of end-user interactions and pre-diagnosis. However, for improving results and getting more accurate test results, pre-diagnosis should be disabled since healthcare professionals will guide the participants. 
 
-Another module, the fine-tune module, consists of background procedures and healthcare professionals' interactions. Also, the healthcare interaction module will not be used in this module since all deformities should be diagnosed on examination. In the following paragraphs, details of the changes will be discussed.
+Another module, the fine-tune module, consists of background procedures and healthcare professionals' interactions. Also, the healthcare interaction module will not be used in this module since all deformities will be diagnosed on examination, and results will be entered by mobile applications. In the following paragraphs, details of the changes will be discussed.
 
 End-user interactions on the prediction module should be updated to be usable by the healthcare professionals for supervised data collection. The same application flow should be protected except for minor modifications. For example, healthcare professionals should be able to enter the diagnosis results of the patients into the application.
 
@@ -29,13 +29,13 @@ In the needs analysis, the importance of the Achilles tendon in the diagnosis pr
 
 \subsection{ Index Calculation }
 
-The pre-diagnosis, the system's underlying structure, which reduces the workload of healthcare professionals, should be updated to improve the results. Based on the importance of the Achilles tendon, the rearfoot angle is the best index calculation method for this calculation. 
+The pre-diagnosis, the system’s underlying structure, which reduces the workload of healthcare professionals, should be updated to include rearfoot angle. The rearfoot angle is a very suitable index calculation method since it is based on the Achilles tendon.
 
 Therefore, photographs of the back of the foot should be taken, and the rearfoot angle calculations should be made. These photos must include the calf and up to the foot's heel. In addition, legs should be centered for more accurate calculations.
 
 \section{IMPLEMENTATION}\label{sec:StudyIIImplementation}
 
-Implementation details of the changed modules will be discussed in this section. A more detailed explanation is provided by dividing it into subsections. 
+This section discusses the implementation details and decisions of the second study. The section focuses on changes to the modules previously discussed in section \ref{chp:Foot Detection & Primary Diagnosis}. A more detailed explanation of changes is provided by dividing it into subsections: end-user application and services and batch process.
 
 \subsection{End-User Application}
 
@@ -44,7 +44,7 @@ In this section, there was no significant change in the end-user application, on
 \begin{figure}[htbp]
 \centering
 \fbox{\includegraphics[width=.41\columnwidth]{KaanEksenMSc/figures/UserApplicationStudyIChanges.jpeg}}
-\caption{Minor changes in end-user application in study I}
+\caption{Minor changes in end-user application in Study I}
 \label{fig:UserApplicationStudyIChanges}
 \end{figure}
 
@@ -59,7 +59,7 @@ One of the most significant service adjustments was made in the API. Diagnosis b
 \begin{figure}[htbp]
 \centering
 \fbox{\includegraphics[width=.55\columnwidth]{KaanEksenMSc/figures/BatchProcessRioStudyII.jpeg}}
-\caption{Region of interest results in study II}
+\caption{Region of interest results in Study II}
 \label{fig:BatchProcessRioStudyII}
 \end{figure}
 
@@ -76,15 +76,15 @@ Following the region of interest detection, critical points were detected. There
 \label{fig:BatchProcessDotsStudyII}
 \end{figure}
 
-The first point base of the calcaneus was calculated based on the region of interest. Processing was started from the bottom of the image, where the initial region is detected, wideness of the foot area was recorded. In case of the region of interest errors, the processing was continued until 30 percent of the image width from the initial region detection. If new wideness was more significant than 50 percent of the initial detection, new area wideness was considered the calcaneus's base.
+The first point base of the calcaneus is calculated based on the region of interest. Processing is started from the bottom of the image, where the initial region is detected, wideness of the foot area is recorded. In case of the region of interest errors, the processing is continued until 30 percent of the image width from the initial region detection. If new wideness is more significant than 50 percent of the initial detection, new area wideness is considered the calcaneus's base.
 
-The second point determination is based on the assumption that the ankle is the thinnest area in the leg. Therefore, the narrowing of the leg was sought, following the first point discovery. After this region was found, the point that was 5 percent below the region of interest was considered as the second breakpoint. In addition, the third point had a similar discovery process. The only difference is that the third point was 5 percent up by the region of interest
+The second point determination is based on the assumption that the ankle is the thinnest area in the leg. Therefore, the narrowing of the leg is sought, following the first point discovery. After this region is found, the point that is 5 percent below the region of interest is considered as the second breakpoint. In addition, the third point had a similar discovery process. The only difference is that the third point is 5 percent up by the region of interest
 
 The fourth point corresponds to the narrowing point of the calf. Therefore, after the third point was found, narrowing was sought in the region.
 
 \section{TEST AND EVALUATION}\label{sec:StudyIITestAndEvaluation}
 
-In this section, the test and evaluation process of the prototype system, which was explained in detail in the previous sections, will be discussed.
+In this section, the test and evaluation process of the prototype system, which is explained in detail in the previous sections, will be discussed.
 
 \begin{table}[htbp]
 \begin{center}
@@ -100,7 +100,7 @@ In this section, the test and evaluation process of the prototype system, which 
 \end{center}
 \end{table}
 
-In the second study, test data were collected through mobile applications under the supervision of healthcare professionals. Therefore, the collected data were evaluated before the procedure. In addition, a document describing how to use the application was given to the healthcare professionals.
+In the second study, test data are collected through mobile applications under the supervision of healthcare professionals. Therefore, the collected data are evaluated before the procedure. In addition, a document describing how to use the application was given to the healthcare professionals.
 
 The prototype was used by 9 participants, where 3 (33.33 percent) of them were female, and the remaining 6 (66,67 percent) were male, with an average age of 22.6 (see Table \ref{tab:StudyIIParticipantStatistics} for details). Data was stored in an online database which is described in section \ref{sec:StudyIAnalysisAndDesign}.
 
@@ -120,7 +120,7 @@ BMI is critical as most index calculations are based on the ratio to eliminate t
 \label{fig:StudyIIFootDeformityTypeDistribution}
 \end{figure} 
 
-All 18 photos collected in the application were used because during the collection of photos all users ware supervised by healthcare professionals. In addition, deformety types of the users were validated in the examination by healthcare professionals before sended to the system (see Figure  \ref{fig:StudyIIFootDeformityTypeDistribution}).
+All 18 photos collected in the application were used because during the collection of photos all users are supervised by healthcare professionals. In addition, deformety types of the users were validated in the examination by healthcare professionals before sended to the system (see Figure  \ref{fig:StudyIIFootDeformityTypeDistribution}).
 
 \begin{figure}[htbp]
 \centering
@@ -129,4 +129,4 @@ All 18 photos collected in the application were used because during the collecti
 \label{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}
 \end{figure} 
 
-After the data collection, automated index calculations were conducted. Initial results showed that the fiings of the healthcare officials and the system were 27,7 percent matched. This low performance may be caused by multiple factors such as image angle, color disorientation, assumptions in point location determination. However, it was thought that the biggest effect in the evaluations was the sensitivity of the Rear foot angle to the calculation error. Because this calculation only determines the deformity according to a difference of 5 degrees. It is very difficult to detect this 5 degree difference in the photos taken via the mobile application (see Figure \ref{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}). 
+After the data collection, automated index calculations are conducted. Initial results showed that the findings of the healthcare officials and the system were 27,7 percent matched. This low performance may be caused by multiple factors such as image angle, color disorientation, assumptions in point location determination. However, it was thought that the biggest effect in the evaluations was the sensitivity of the Rear foot angle to the calculation error. Because this calculation only determines the deformity according to a difference of 5 degrees. It is very difficult to detect this 5 degree difference in the photos taken via the mobile application (see Figure \ref{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}). 
