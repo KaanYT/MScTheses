@@ -1,48 +1,18 @@
-%% This `vancouver.bst' bibliographic style file (for LaTeX/BibTeX) is
-%% generated with the docstrip utility and modified manually to meet the
-%% ``Uniform Requirements for Manuscripts Submitted to Biomedical Journals''
-%% as published in N Engl J Med 1997;336:309-315.
-%% (also known as the Vancouver style)
-%% The standards are summarized in:
-%% https://www.nlm.nih.gov/bsd/uniform_requirements.html
-%% and detailed in:
-%% https://www.ncbi.nlm.nih.gov/books/NBK7256/
-%%
-%%-------------------------------------------------------------------
-%%
 %% Author: Folkert van der Beek <folkertvanderbeek@gmail.com>
-%% Version: 0.8
+%% Version: 1.0
 %% URL: https://gitlab.com/fvdbeek/vancouver.bst
 %%
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%   http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2005/12/01 or later.
+%% This file is modified to match to the format
+%% required by the Graduate School of Natural
+%% and Applied Sciences, Yeditepe University.
 %%
-%%-------------------------------------------------------------------
+%% Modified by Osman Kerem Perente
+%% <kperente@cse.yeditepe.edu.tr>
 %%
-%% This bibliography style file is intended for texts in ENGLISH
-%% This is a numerical citation style, and as such is standard LaTeX.
-%% It requires no extra package to interface to the main text.
-%% The form of the \bibitem entries is
-%%   \bibitem{key}...
-%% Usage of \cite is as follows:
-%%   \cite{key} ==>>          [#]
-%%   \cite[chap. 2]{key} ==>> [#, chap. 2]
-%% where # is a number determined by the ordering in the reference list.
-%% The order in the reference list is that by which the works were originally
-%%   cited in the text, or that in the database.
- %
-%% To change the reference numbering system from [1] to 1,
-%% put the following code in the preamble:
-%% \makeatletter % Reference list option change
-%% \renewcommand\@biblabel[1]{#1} % from [1] to 1
-%% \makeatother %
+%% Last modified on 22/02/2022
 %%
-%%---------------------------------------------------------------------
+%% DO NOT CHANGE THIS FILE
+%%
 
 %% List of all possible fields
 ENTRY
@@ -117,6 +87,15 @@ FUNCTION {init.state.consts}
   #2 'after.sentence :=
   #3 'after.block :=
 }
+
+% to make titles italic
+FUNCTION {emphtitle}
+{ duplicate$ empty$
+    { pop$ "" }
+    { "{\em " swap$ * "}" * }
+  if$
+}
+
 %% Declaration of string variables
 STRINGS { s t}
 
@@ -180,7 +159,8 @@ FUNCTION {output.nonnull}
 % brackets.  bracket.state is handled specially within output.nonnull.
 FUNCTION {inbrackets}
 { bracket.state close.brackets =
-    { within.brackets 'bracket.state := } % reset the state: not open nor closed
+    { within.brackets 'bracket.state := } % reset the state: not open nor
+                                          % closed
     { open.brackets 'bracket.state := }
   if$
 }
@@ -421,21 +401,26 @@ FUNCTION {parenthesize.check}
 STRINGS {z}
 
 FUNCTION {remove.dots}
-{ 'z :=	% expects string on top of the stack, pops the string and assigns it to variable z
+{ 'z :=	% expects string on top of the stack, pops the string and assigns it
+        % to variable z
   "" % push empty string
   { z empty$ not } % returns 0 if variable z is empty
   { z #1 #1 substring$ % push the first character of variable z
-    z #2 global.max$ substring$ 'z := % assigns the 2nd to last character of variable z to variable z
+    z #2 global.max$ substring$ 'z := % assigns the 2nd to last character of
+                                      % variable z to variable z
     duplicate$ "\" = % pushes 1 if the last character is "\", otherwise 0
     { * % concatenates the last 2 literals
       z #1 #1 substring$ % push the first character of variable z
-      z #2 global.max$ substring$ 'z := % assigns the 2nd to last character of variable z to variable z
-      * % concatenates the last 2 literals, i.e. every character, even a dot, following a "\" will be printed
+      z #2 global.max$ substring$ 'z := % assigns the 2nd to last character of
+                                        % variable z to variable z
+      * % concatenates the last 2 literals, i.e. every character, even a dot,
+        % following a "\" will be printed
     }
     { duplicate$ "." = % pushes 1 if the last character is ".", otherwise 0
       'pop$ %  pushes the pop$ function
       { * } % concatenates the last 2 literals
-    if$ % pops the last character if it is a dot, otherwise concatenates it with the string on top of the stack
+    if$ % pops the last character if it is a dot, otherwise concatenates it
+        % with the string on top of the stack
     }
     if$
   }
@@ -899,15 +884,9 @@ FUNCTION {format.note}
     }
   if$
 }
-FUNCTION {emphtitle}
-{ duplicate$ empty$
-    { pop$ "" }
-    { "{\em " swap$ * "}" * }
-  if$
-}
 
 FUNCTION {format.title}
-{ title  
+{ title
 %%duplicate$ empty$ 'skip$
 %%  { "t" change.case$ }
 %%if$
@@ -933,23 +912,15 @@ FUNCTION {output.bibitem}
   before.all 'output.state :=
 }
 
-FUNCTION {n.dashify}
-{
-  't :=
+FUNCTION {hyphenate}
+{ 't :=
   ""
     { t empty$ not }
     { t #1 #1 substring$ "-" =
-        { t #1 #2 substring$ "--" = not
-            { "--" *
-              t #2 global.max$ substring$ 't :=
-            }
-            {   { t #1 #1 substring$ "-" = }
-                { "-" *
-                  t #2 global.max$ substring$ 't :=
-                }
-              while$
-            }
-          if$
+        { "-" *
+            { t #1 #1 substring$ "-" = }
+            { t #2 global.max$ substring$ 't := }
+          while$
         }
         { t #1 #1 substring$ *
           t #2 global.max$ substring$ 't :=
@@ -997,6 +968,28 @@ FUNCTION {format.date}
 {
   no.blank.or.punct
   ";"
+  duplicate$ empty$
+  year  "year"  bibinfo.check duplicate$ empty$
+    { swap$ 'skip$
+        { "there's a month but no year in " cite$ * warning$ }
+      if$
+      *
+    }
+    { swap$ 'skip$
+        {
+          swap$
+          " " * swap$
+        }
+      if$
+      *
+    }
+  if$
+}
+
+FUNCTION {format.fbe.date}
+{
+  no.blank.or.punct
+  "."
   duplicate$ empty$
   year  "year"  bibinfo.check duplicate$ empty$
     { swap$ 'skip$
@@ -1154,12 +1147,155 @@ FUNCTION {multi.page.check}
   multiresult
 }
 
+FUNCTION {is.letter}
+{ duplicate$ empty$
+    { pop$ #0 }
+    { chr.to.int$
+      duplicate$ "A" chr.to.int$ <
+        { pop$ #0 }
+        { duplicate$ "Z" chr.to.int$ >
+            { duplicate$ "a" chr.to.int$ <
+                { pop$ #0 }
+                { duplicate$ "z" chr.to.int$ >
+                    { pop$ #0 }
+                    { pop$ #1 }
+                  if$
+                }
+              if$
+            }
+            { pop$ #1 }
+          if$
+        }
+      if$
+    }
+  if$
+}
+
+FUNCTION {is.digit}
+{ duplicate$ empty$
+    { pop$ #0 }
+    { chr.to.int$
+      duplicate$ "0" chr.to.int$ <
+        { pop$ #0 }
+        { "9" chr.to.int$ >
+            { #0 }
+            { #1 }
+          if$
+        }
+      if$
+    }
+  if$
+}
+
+FUNCTION {is.letter.digit}
+{ duplicate$ is.letter
+  swap$ is.digit or
+}
+
+INTEGERS { charptr len }
+
+STRINGS { start.number end.number range.separator }
+
+FUNCTION {abbreviate.range.numbers}
+{ end.number end.number text.length$ #1 substring$ is.letter
+    { start.number range.separator * end.number * }
+    { end.number text.length$ 'len :=
+      start.number text.length$ len <
+        'skip$
+        { start.number text.length$ len - #1 + 'charptr :=
+            { end.number text.length$ #1 >
+              start.number charptr #1 substring$
+              end.number #1 #1 substring$ = and
+            }
+            { charptr #1 + 'charptr :=
+              end.number #2 global.max$ substring$ 'end.number :=
+            }
+          while$
+        }
+      if$
+      start.number range.separator * end.number *
+    }
+  if$
+}
+
+% This a helper function for use in format.page.numbers
+FUNCTION {append.pages.part}
+{ duplicate$ duplicate$ text.length$ #1 substring$ "," =
+    { " " * }
+    'skip$
+  if$
+  end.number empty$
+    { start.number empty$
+        'skip$
+        { start.number * }
+      if$
+    }
+    { abbreviate.range.numbers * }
+  if$
+  "" 'start.number :=
+  "" 'end.number :=
+  "" 'range.separator :=
+}
+
+FUNCTION {format.page.numbers}
+{ 's :=
+  "" 't :=
+  "" 'start.number :=
+  "" 'end.number :=
+  "" 'range.separator :=
+  ""
+    { s empty$ not }
+    { s #1 #1 substring$ 't :=
+      t is.letter.digit
+        { range.separator empty$
+            { start.number t * 'start.number := }
+            { end.number t * 'end.number := }
+          if$
+        }
+        { s #1 #2 substring$ "--" =
+            { "--" 'range.separator := }
+            { t "-" =
+                { "-" 'range.separator := }
+                { append.pages.part
+                  t *
+                }
+              if$
+            }
+          if$
+        }
+      if$
+      s #2 global.max$ substring$ 's :=
+    }
+  while$
+  append.pages.part
+}
+
+FUNCTION {format.fbe.pages}
+{ pages duplicate$ empty$ 'skip$
+    { duplicate$ multi.page.check
+        {
+          format.page.numbers
+          "" swap$
+          hyphenate
+        }
+        {
+          "" swap$
+        }
+      if$
+      ""
+      "pages" bibinfo.check
+      * *
+    }
+  if$
+}
+
 FUNCTION {format.pages}
 { pages duplicate$ empty$ 'skip$
     { duplicate$ multi.page.check
         {
+          format.page.numbers
           bbl.pages swap$
-          n.dashify
+          hyphenate
         }
         {
           bbl.page swap$
@@ -1178,7 +1314,8 @@ FUNCTION {format.journal.pages}
   if$
   pages duplicate$ empty$ 'pop$
   {
-    n.dashify
+    format.page.numbers
+    hyphenate
     "pages" bibinfo.check
     *
   }
@@ -1250,7 +1387,7 @@ FUNCTION {format.chapter.pages}
 
 	FUNCTION {format.booktitle}
 	{
-	  booktitle  "booktitle" bibinfo.check
+	  booktitle "booktitle" bibinfo.check
 	}
 
 	FUNCTION {format.in.ed.booktitle}
@@ -1347,6 +1484,10 @@ FUNCTION {format.organization.address}
 
 FUNCTION {format.institution.address}
 { institution "institution" bibinfo.check format.org.or.pub
+}
+
+FUNCTION {format.school.address}
+{ school "school" bibinfo.check format.org.or.pub
 }
 
 
@@ -1447,76 +1588,21 @@ FUNCTION {output.web.refs}
 
 % Webpage entry type.
 % Title and url fields required;
-% author, note, year, month, and lastchecked fields optional
+% author, note, and lastchecked fields optional
 STRINGS {database}
 FUNCTION {webpage}
 { output.bibitem
   author empty$
-    { editor empty$
-        'skip$  % author and editor both optional
-        { format.editors output.nonnull }
-      if$
-    }
-    { editor empty$
-        { format.authors output.nonnull }
-        { "can't use both author and editor fields in " cite$ * warning$ }
-      if$
-    }
+    'skip$
+    { format.authors output.nonnull }
   if$
-%  author empty$
-%    'skip$
-%    { format.authors output.nonnull }
-%  if$
   new.block
   format.title "title" output.check
-  journal empty$
-    {
-      format.type "type" output.check
-      publisher empty$
-        'skip$
-        { format.publisher.address output }
-      if$
-      "database on the Internet" 'database :=
-      type database =
-        { format.journal.date "year" output.check }
-        { format.date "year" output.check }
-      if$
-      lastchecked empty$
-        'skip$
-        { format.lastchecked output }
-      if$
-      new.block
-      part empty$
-        'skip$
-        { part output }
-      if$
-      pages empty$
-        'skip$
-        { pages bracket.check output }
-      if$
-    }
-    { journal
-      remove.dots
-      "journal" bibinfo.check
-      "journal" output.check
-      format.type "type" output.check
-      format.journal.date "year" output.check
-      lastchecked empty$
-        'skip$
-        { format.lastchecked output
-	  ";" no.blank.or.punct output
-	}
-      if$
-      no.blank.or.punct format.vol.num output
-      pages empty$
-        'skip$
-	{ ":" no.blank.or.punct output
-	  no.blank.or.punct pages bracket.check output
-	}
-      if$
-      new.block
-    }
-  if$
+  lastchecked empty$
+    'skip$
+    { format.lastchecked output }
+    if$
+  new.block
   format.url "url" output.check
   new.block
   note output
@@ -1527,7 +1613,6 @@ FUNCTION {webpage}
 FUNCTION {misc}
 { output.bibitem
   format.authors "author" output.check
-  format.editors "author and editor" output.check
   format.title "title" output.check
   type missing$
     { skip$ }
@@ -1535,7 +1620,7 @@ FUNCTION {misc}
     %%{ inbrackets type output }
   if$
   format.publisher.address output
-  format.date "year" output.check
+  format.fbe.date "year" output.check
   new.block
   format.note output
   new.block
@@ -1643,7 +1728,7 @@ FUNCTION {inbook}
   new.block
   chapter "chapter" output.check
   new.block
-  format.in.ed.title "title" output.check
+  format.title emphtitle "title" output.check
   format.bvolume output
   format.edition output
   new.sentence
@@ -1665,7 +1750,7 @@ FUNCTION {incollection}
   new.block
   format.title "title" output.check
   new.block
-  format.in.ed.booktitle "booktitle" output.check
+  format.booktitle emphtitle "booktitle" output.check
   format.bvolume output
   format.edition output
   new.sentence
@@ -1687,7 +1772,7 @@ FUNCTION {inproceedings}
   new.block
   format.title "title" output.check
   new.block
-  format.in.ed.booktitle emphtitle "booktitle" output.check
+  format.booktitle emphtitle "booktitle" output.check
   format.bvolume output
   new.sentence
   format.number.series output
@@ -1697,10 +1782,9 @@ FUNCTION {inproceedings}
       format.publisher.address output
     }
   if$
-  format.date "year" output.check
-  date.block
-  add.blank
-  format.pages "pages" output.check
+  format.fbe.date "year" output.check
+  add.colon
+  format.fbe.pages "pages" output.check
   new.block
   format.note output
   output.web.refs  % urlbst
@@ -1721,8 +1805,7 @@ FUNCTION {phdthesis}
   "title" output.check
   format.type "type" output.check
   new.block
-  school "school" bibinfo.warn output
-  address "address" bibinfo.check output
+  format.school.address output
   format.date "year" output.check
   new.block
   format.note output
