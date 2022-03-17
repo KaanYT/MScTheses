@@ -1,108 +1,86 @@
-\documentclass[a4paper,12pt]{report}
+% load the thesis class
+\documentclass[algpseudocode]{thesis}
+% \documentclass[algorithm2e]{thesis}
 
-\usepackage{packagesDonotChange/fbe_PhDtez}
-\usepackage{times}
-\usepackage{algorithm}
-\usepackage{algorithmic}
-\usepackage{epsfig}
-\usepackage{amsmath, amssymb}
-\usepackage{graphicx}
-\usepackage[tight]{subfigure}
-%\usepackage{subfigure}
-\usepackage{theorem}
-\usepackage{hhline}
-\usepackage{booktabs}
-\usepackage{fancyvrb}
-\usepackage{fancyhdr}
-\usepackage{epstopdf}
-\usepackage{enumerate}
-\usepackage{isomath}
-\usepackage{upgreek}
-\usepackage{url}
+% write your thesis title
+\title{NOVEL MOBILE PRE-DIAGNOSTIC SOLUTION FOR PES PLANUS AND PES CAVUS USING IMAGE PROCESSING AND DEEP NEURAL NETWORKS}
 
-%\usepackage[a4paper]{geometry}
-%\usepackage{setspace}
-%\usepackage{parskip}
-%\usepackage{upgreek}
-%\usepackage{tocloft}
+% write your thesis title in turkish
+\turkishtitle{PES PLANUS VE PES CAVUS İÇİN GÖRÜNTÜ İŞLEME VE DERİN SİNİR AĞLARINI KULLANAN MOBİL ON TEŞHİS ÇÖZÜMÜ}
 
+% first letter of name and surname is uppercase
+% other letters are lowercase
+\author{Kaan Eksen}
 
-%\usepackage{fontspec}
-\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
-\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
+% write your department
+\department{Computer Engineering}
 
-\makeatletter
-\newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
-\makeatother
+% write your thesis year
+\date{2022}
 
-\providecommand{\abs}[1]{\lvert#1\rvert}
-\providecommand{\norm}[1]{\lVert#1\rVert}
+% write your student number for PhD Proposal
+% \studentnumber{12345678}
 
-\setlength\fboxsep{1pt}
-\setlength\subfigbottomskip{3pt}
-\setlength\subfigtopskip{3pt}
-\setlength{\jot}{2em}
+\algnewcommand\Or{\textbf{or}}
 
-\makeatletter
-\renewcommand{\thesubfigure}{.\alph{subfigure}}
-\renewcommand{\@thesubfigure}{\alph{subfigure}.\hskip\subfiglabelskip}
-\renewcommand{\@@thesubfigure}{\alph{subfigure}.}
+% adjust the spacing between ``thesis title''
+% and ``approved by'' in the approval page
+\approvalskip{4cm}
 
-\makeatother
+% adjust the spacing between names and signature
+% lines in the approval page
+% (minimum is 8.5cm, maximum should be 10cm)
+\signatureskip{8.5cm}
 
-
-% this part is used to define new enviroments
-% lemma 1, lemma 2
-%
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\newtheorem{proof}{Proof}
-\newtheorem{corollary}{Corollary}
-\newtheorem{definition}{Definition}
-
+% write your supervisors, co-supervisor(s), examiners
+% and their respective universities
+\supervisor{Assist. Prof. Dr. Tacha Serif}{Yeditepe University}
+% \cosupervisori{Assoc. Prof. Dr. Name Surname}{DEF University}
+% \cosupervisorii{Assoc. Prof. Dr. Name Surname}{DEF University}
+% \examineri{Assist. Prof. Dr. Tacha Serif}{ABC University}
+\examinerii{Assist. Prof. Dr. Onur Demir}{Yeditepe University}
+\examineriii{Prof. Dr. Fatih Uğurdağ}{Özyeğin University}
+% \examineriv{Assist. Prof. Dr. Name Surname}{JKL University}
+% \examinerv{Assist. Prof. Dr. Name Surname}{MNO University}
 
 \begin{document}
 
+% MSc Thesis
+\MakeMScThesis
 
-\include{chapters/1.coverPage}
+% PhD Thesis
+% \MakePhDThesis
 
-\pagenumbering{roman}
+% PhD Proposal
+% \MakePhDProposal
 
-\makeapprovalpage
+% mandatory chapters/pages
+\input{chapters/0.1.acknowledgements}
+\input{chapters/0.2.abstract}
+\input{chapters/0.3.turkishabstract}
+\input{chapters/0.4.contents}
+\input{chapters/0.5.symbolsabbreviations}
 
-\input{chapters/1.legal}
+% introduction
+\input{chapters/1.introduction}
 
-\input{chapters/2.acknowledgement}
+% chapters in the thesis body
+% you can add/remove/rename chapters if necessary
+\input{chapters/2.evaluationOfTechnology}
+\input{chapters/3.background_feetDeformities}
+\input{chapters/4.methodology}
+\input{chapters/5.1study1_footDetectionAndPrimaryDiagnosis}
+\input{chapters/5.2study2_backSideDiagnosis}
+\input{chapters/5.3study3_sideImprovementDiagnosis}
 
+% conclusions
+\input{chapters/6.conclusionsAndFutureWork}
 
-\input{chapters/3.abstract}
+% references
+\input{chapters/references}
 
-\input{chapters/4.ozet}
-
-%these are automatically generated
-\tableofcontents
-\listoffigures
-\listoftables
-
-
-\include{chapters/5.listOfSymbols}
-
-\pagenumbering{arabic}
-
-
-\include{chapters/6.introduction}
-\include{chapters/7.evaluationOfTechnology}
-\include{chapters/8.1background_feetDeformities}
-\include{chapters/9.methodology}
-\include{chapters/10.1study1_footDetectionAndPrimaryDiagnosis}
-\include{chapters/10.2study2_backSideDiagnosis}
-\include{chapters/10.3study3_sideImprovementDiagnosis}
-\include{chapters/11.conclusionsAndFutureWork}
-
-
-\include{chapters/12.reference}
-\include{chapters/13.appendix}
-
+% appendices
+% comment line below if there are none
+\input{chapters/appendices}
 
 \end{document}
-
