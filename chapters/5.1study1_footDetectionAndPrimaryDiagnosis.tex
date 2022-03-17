@@ -41,6 +41,13 @@ The system should contain two essential components in order to provide a stable 
 
 The prediction module should essentially consist of two parts, namely end-user and pre-diagnosis application. The end-user application will provide remote access, which is one of the priorities of the system, to the user. Thus, patients will be provided with healthcare services without going to the hospital. To this end, mobile applications should provide services to 95 percent of the mobile operating systems in the market, which are mainly made of iOS and Android operating systems. After user information is collected through the end-user application, pre-diagnosis application will be used to diagnose the user and provide results.
 
+\begin{figure}[htbp]
+\centering
+\fbox{\includegraphics[width=.80\columnwidth]{figures/PredictionModuleSequenceDiagram.png}}
+\caption{Prediction module sequence diagram}
+\label{fig:PredictionModuleSequenceDiagram}
+\end{figure}
+
 In the prediction module, user information collection is one of the fundamental parts. Information collection should be divided into three fundamental headings: essential, health, and foot information. 
 
 The essential information collection part focuses on differentiating end-users. Therefore, unique properties such as users' phone numbers or email addresses should be collected as part of this heading. Furthermore, gender, birth date, weight, and height should also be collected to analyze the population variance. Even if it is not related, the terms and conditions document that asks the user to confirm data usage and storage permission also should be viewed and agreed upon under this heading.
@@ -48,13 +55,6 @@ The essential information collection part focuses on differentiating end-users. 
 The second part is the health information collection which focus on detecting health issues related to pes planus and pes cavus. However, this part also requires the system to detect the evaluation requirement of health professionals for critical health issues. Therefore, the system should propose a direct call or appointment for the face-to-face examination between the user and health professional in such conditions. Furthermore, discovering critical health issues should be based on a rule-based system to reduce errors. However this is expected to be very limited to specified cases such as extreme pain levels.
 
 Finally, the foot information collection part should focus on detecting pes planus and pes cavus. Therefore, the degree of pain in physical activities, the degree of pain at night, and most importantly, pictures of the foot should be collected. In Figure \ref{fig:PredictionModuleSequenceDiagram}, the sequence diagram of the prediction module can be seen.
-
-\begin{figure}[htbp]
-\centering
-\fbox{\includegraphics[width=.9\columnwidth]{figures/PredictionModuleSequenceDiagram.png}}
-\caption{Prediction module sequence diagram}
-\label{fig:PredictionModuleSequenceDiagram}
-\end{figure}
 
 In the prediction module, the collected information should also inform health professionals in order to reduce examination time. Besides that, in Section \ref{sec:FineTuneModule}, Fine Tune Module, the system performance improvement step, which is formed by adding new data to be obtained from health professionals, will be discussed.
 
@@ -89,7 +89,7 @@ At the end of the initial cycle, the system should calculate well known accepted
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.9\columnwidth]{figures/FineTuneModuleWebApplicationSequenceDiagram.png}}
+\fbox{\includegraphics[width=.71\columnwidth]{figures/FineTuneModuleWebApplicationSequenceDiagram.png}}
 \caption{Fine-tune module web application activity diagram}
 \label{fig:FineTuneModuleWebApplicationSequenceDiagram}
 \end{figure}
@@ -143,7 +143,7 @@ The iOS client is compatible with iOS 11 and forward, making it accessible for 9
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.7\columnwidth]{figures/UserApplicationUI.png}}
+\fbox{\includegraphics[width=.75\columnwidth]{figures/UserApplicationUI.png}}
 \caption{Android (left) and iOS (right) application UI}
 \label{fig:UserApplicationUI}
 \end{figure}
@@ -154,7 +154,7 @@ Both end-user applications use the same user flow with corresponding platform UI
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.4\columnwidth]{figures/UserApplicationValidations.png}}
+\fbox{\includegraphics[width=.35\columnwidth]{figures/UserApplicationValidations.png}}
 \caption{User application validations (iOS)}
 \label{fig:UserApplicationValidations}
 \end{figure}
@@ -174,7 +174,7 @@ The shooting angle and feet pressuring the ground during the photos shooting are
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{figures/UserApplicationFeedback.png}}
+\fbox{\includegraphics[width=.55\columnwidth]{figures/UserApplicationFeedback.png}}
 \caption{User application feedback (iOS)}
 \label{fig:UserApplicationFeedback}
 \end{figure}
@@ -191,7 +191,7 @@ The specialist interface is a web application whose primary purpose is to enable
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.8\columnwidth]{figures/WebApplicationPatientInfo.png}}
+\fbox{\includegraphics[width=.7\columnwidth]{figures/WebApplicationPatientInfo.png}}
 \caption{Web application patient information}
 \label{fig:WebApplicationPatientInfo}
 \end{figure}
@@ -223,14 +223,14 @@ The second cycle provides calculated results so that healthcare officials can ma
 
 The web application contains validations to ensure current diagnosis. Thus, the system ensures that all the critical points are set in the initial cycle. The second cycle provides that human-related errors are eliminated, such as wrongly placed points. 
 
+In addition, The web application also provides helper functionalities to healthcare workers such as critical point assistance and information boxes. For example, the arch height index requires finding the center of the points therefore the critical point assistance displays (see Figure \ref{fig:WebApplicationCriticalPointAssistance}) the center of the points provided by the health professionals. Another example is that information boxes provide simple reminders about indexes (see Figure \ref{fig:WebApplicationInformationBoxes}).
+
 \begin{figure}[htbp]
 \centering
 \fbox{\includegraphics[width=.6\columnwidth]{figures/WebApplicationInformationBoxes.png}}
 \caption{Web application information boxes}
 \label{fig:WebApplicationInformationBoxes}
 \end{figure}
-
-In addition, The web application also provides helper functionalities to healthcare workers such as critical point assistance and information boxes. For example, the arch height index requires finding the center of the points therefore the critical point assistance displays (see Figure \ref{fig:WebApplicationCriticalPointAssistance}) the center of the points provided by the health professionals. Another example is that information boxes provide simple reminders about indexes (see Figure \ref{fig:WebApplicationInformationBoxes}).
 
 \subsection{Services And Batch Process} \label{sec:StudyIServicesAndBatchProcess}
 The application consists of two services: web and client application service. This structure provides scalability and security. Therefore, one service deals with end-user interactions and data transmission. At the same time, web service provides healthcare professionals and batch processes. With this separation, each service is placed in different layers. Therefore, this makes it possible that only client application services have internet access, increasing the web application security by limiting internet access. In addition, this will provide more hardware-intensive operations (image processing, deep learning) to other physical servers. 
@@ -263,7 +263,7 @@ The second step deals with image preparation. After potential barefoot is detect
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{figures/BatchProcessPerspectiveTransformation.png}}
+\fbox{\includegraphics[width=.50\columnwidth]{figures/BatchProcessPerspectiveTransformation.png}}
 \caption{Batch process perspective transformation}
 \label{fig:BatchProcessPerspectiveTransformation}
 \end{figure}
@@ -335,7 +335,7 @@ The database was divided into eight major table groups based on usage and connec
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=0.98\columnwidth]{figures/DatabaseGeneralView.png}}
+\fbox{\includegraphics[width=0.90\columnwidth]{figures/DatabaseGeneralView.png}}
 \caption{General view of database}
 \label{fig:DatabaseGeneralView}
 \end{figure}
@@ -344,7 +344,7 @@ User table group were explicitly designed for all application users, which inclu
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.7\columnwidth]{figures/DatabaseUser.png}}
+\fbox{\includegraphics[width=.65\columnwidth]{figures/DatabaseUser.png}}
 \caption{Database user group table}
 \label{fig:DatabaseUser}
 \end{figure}
@@ -375,6 +375,9 @@ In this section, the test and evaluation process of the prototype system, which 
 
 In the first study, the test data were collected through mobile applications without any supervision. Therefore some of the data collected were not usable in the test and evaluation process. In addition, the data was mainly collected on the Yeditepe university students, which is a diverse population, and participants were provided with the how-to-use document.
 
+The prototype was used by 34 participants, where 12 (35.29 percent) of them were female, and the remaining 22 (64,71 percent) were male, with an average age of 24 (see Table \ref{tab:StudyIParticipantStatistics} for details). Data that were provided by participants were stored in an online database which is described in section \ref{sec:StudyIAnalysisAndDesign}.
+
+
 \begin{table}[htbp]
 \begin{center}
 \caption{Participant statistics in study I}
@@ -387,8 +390,6 @@ In the first study, the test data were collected through mobile applications wit
 \label{tab:StudyIParticipantStatistics}
 \end{center}
 \end{table}
-
-The prototype was used by 34 participants, where 12 (35.29 percent) of them were female, and the remaining 22 (64,71 percent) were male, with an average age of 24 (see Table \ref{tab:StudyIParticipantStatistics} for details). Data that were provided by participants were stored in an online database which is described in section \ref{sec:StudyIAnalysisAndDesign}. 
 
 \begin{figure}[htbp]
 \centering
@@ -419,13 +420,13 @@ After the physician results were collected, index calculations were conducted (s
 
 Initial results showed that the findings of the specialist and the system were 91.80 percent matched. Even though these results showed great promise, this comparison was based on the class of the foot. Therefore, a more quantitative approach was necessary to asset the conducted test was accurate. Since automated algorithm critical points are not directly comparable with the specialist critical points (the pre-diagnosis algorithm transforms the images), point intermediate and resulting findings were compared.
 
-Therefore, the system index errors were calculated, and normal distribution was piloted (see Figure \ref{fig:StudyIIndexErrorNormalDists}). The results showed that most of the normal distribution of the index error was within a small error range. On the other hand, it has been observed that there are also outliers with significant error rates. These errors were primarily due to human errors, such as misplaced critical points or photos taken from the wrong angle. 
-
 \begin{figure}[htbp]
 \centering
 \fbox{\includegraphics[width=.65\columnwidth]{figures/StudyILenghtErrorNormalDists.png}}
 \caption{Length error normal distribution in study I}
 \label{fig:StudyILenghtErrorNormalDists}
 \end{figure}
+
+Therefore, the system index errors were calculated, and normal distribution was piloted (see Figure \ref{fig:StudyIIndexErrorNormalDists}). The results showed that most of the normal distribution of the index error was within a small error range. On the other hand, it has been observed that there are also outliers with significant error rates. These errors were primarily due to human errors, such as misplaced critical points or photos taken from the wrong angle. 
 
 In addition, length error was also calculated to see the effect of the perspective transformation in error calculation (see Figure \ref{fig:StudyILenghtErrorNormalDists}). Even though those results showed similar results to index error, outliers were increased. This error increase was partially due to a perspective transformation of the images.

@@ -49,7 +49,7 @@ The first one is the Bias-Variance trade-off \cite{geman1992neural} (Figure \ref
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{figures/BiasAndVariance.png}}
+\fbox{\includegraphics[width=.55\columnwidth]{figures/BiasAndVariance.png}}
 \caption{Graphical illustration of bias and variance \cite{biasandvarianceillustration}}
 \label{fig:BiasAndVariance}
 \end{figure}
@@ -82,14 +82,14 @@ d(x,y) = \sqrt{\sum_{j=1}^{N}(x_j - y_j)^2}
 
 The Euclidean Distance shown in Equation \ref{euclidean_distance_equation} is commonly used to calculate the distance between observations. The smallest k is selected according to the distance values calculated here \cite{hall2008choice}.
 
+Another classification algorithm is decision trees. They consist of internal decision nodes and end leaves (Figure \ref{fig:DecisionTreeExample}). A decision tree tries to establish which class the data with a particular class will be included in, starting from the node with the highest information gain \cite{hssina2014comparative}. One of the most commonly used algorithm to create a decision tree in data mining is the ID3. The main principle of the ID3 algorithm is to classify objects by testing the values of their attributes \cite{jin2009improved}.
+
 \begin{figure}[htbp]
 \centering
 \fbox{\includegraphics[width=.6\columnwidth]{figures/DecisionTree.png}}
 \caption{Decision tree}
 \label{fig:DecisionTreeExample}
 \end{figure}
-
-Another classification algorithm is decision trees. They consist of internal decision nodes and end leaves (Figure \ref{fig:DecisionTreeExample}). A decision tree tries to establish which class the data with a particular class will be included in, starting from the node with the highest information gain \cite{hssina2014comparative}. One of the most commonly used algorithm to create a decision tree in data mining is the ID3. The main principle of the ID3 algorithm is to classify objects by testing the values of their attributes \cite{jin2009improved}.
 
 \subsection{Unsupervised Learning}
 
@@ -127,19 +127,19 @@ There also many model-based reinforcement learning approaches such as World Mode
 
 In digital image processing, analysis, and computer vision have made significant advances in theory and applications in recent years. Digital image processing has been a technological leader in developments in many vital areas such as medical view multimedia systems, biology, metal science, robotics and manufacturing, intelligent sensing systems, remote sensing, graphic arts, and printers \cite{pitas2000digital}.
 
-
-Digital image processing techniques consist of 3 different classes; these are low-level vision, mid-level vision, and high-level vision. Low-level vision algorithms are specifically digital image processing algorithms such as edges detection: their input and output are digital images. Mid-level vision algorithms consist of digital images as input and image properties as output such as object recognition, 3D reconstruction etc. High-level vision algorithms, on the other hand, uses the higher level of perception such as conceptual description of activity, intention and behavior \cite{pitas2000digital, gonzalez2002digital}. In the rest of this section, information about Low-Level Vision algorithms will be examined in detail.
-
-\subsection{Digital Image Representation}
-
-An image is the visual representation of an object by the capturing luminance emitted from the source. The mathematical model underlying image formation is based on the emitting source (e.g., visible light, X-rays, ultrasonic rays), the physics of the interaction of the emitting object, and the system is used (see Figure \ref{fig:PhongReflectionModel}). Such a system usually includes an optical lens, optical sensor, and image digitizer \cite{pitas2000digital}.
-
 \begin{figure}[htbp]
 \centering
 \fbox{\includegraphics[width=.6\columnwidth]{figures/PhongReflectionModel.png}}
 \caption{Phong reflection model \cite{kurihara2012shading}}
 \label{fig:PhongReflectionModel}
 \end{figure}
+
+
+Digital image processing techniques consist of 3 different classes; these are low-level vision, mid-level vision, and high-level vision. Low-level vision algorithms are specifically digital image processing algorithms such as edges detection: their input and output are digital images. Mid-level vision algorithms consist of digital images as input and image properties as output such as object recognition, 3D reconstruction etc. High-level vision algorithms, on the other hand, uses the higher level of perception such as conceptual description of activity, intention and behavior \cite{pitas2000digital, gonzalez2002digital}. In the rest of this section, information about Low-Level Vision algorithms will be examined in detail.
+
+\subsection{Digital Image Representation}
+
+An image is the visual representation of an object by the capturing luminance emitted from the source. The mathematical model underlying image formation is based on the emitting source (e.g., visible light, X-rays, ultrasonic rays), the physics of the interaction of the emitting object, and the system is used (see Figure \ref{fig:PhongReflectionModel}). Such a system usually includes an optical lens, optical sensor, and image digitizer \cite{pitas2000digital}.
 
 Digital images are generated by hardware that measures radiated energy from the source. These measurements are taken from various points across two-dimensional space to form the image. These measuring equipment are called sensors, and many different types are used. For example, sensors can interact with various parts of the electromagnetic spectrum, acoustic energy, electron emission, lasers, or other measurable signals. The electromagnetic spectrum includes visible light, infrared, ultraviolet, X-rays, microwaves, radio waves, or gamma rays (see Figure \ref{fig:EMSpectrumcolor}) [6].
 

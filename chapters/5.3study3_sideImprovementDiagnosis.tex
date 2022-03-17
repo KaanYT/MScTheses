@@ -18,14 +18,14 @@ The third fallback is that there is no error detection mechanism to reduce the e
 
 Implementation details of the changes in the batch process will be discussed separately in this section.
 
+The first fallback is the accuracy of the foot sole function. The foot sole function calculation was designed to reduce the sudden slope changes to the function because there might be an error in edge detection. Increasing the predefined windows, where polynomial regression is applied, will improve the function’s response to changes (see Figure \ref{fig:StudyIIIPredefinedWindows}).
+
 \begin{figure}[htbp]
 \centering
 \fbox{\includegraphics[width=.60\columnwidth]{figures/StudyIIIPredefinedWindows.jpeg}}
 \caption{Accuracy improvement with polynomial regression window in study III}
 \label{fig:StudyIIIPredefinedWindows}
 \end{figure}
-
-The first fallback is the accuracy of the foot sole function. The foot sole function calculation was designed to reduce the sudden slope changes to the function because there might be an error in edge detection. Increasing the predefined windows, where polynomial regression is applied, will improve the function’s response to changes (see Figure \ref{fig:StudyIIIPredefinedWindows}).
 
 \begin{figure}[htbp]
 \centering
@@ -57,6 +57,7 @@ In this section, the testing and evaluation process of the prototype system, whi
 \end{figure} 
 
 The findings of the healthcare officials and the system were matched 83,3 percent of the time (see Figure \ref{fig:StudyIIIFootDeformityAutomatedProcessResults}). One pes planus and two pes cavus mismatch in detection are recorded. Inner side diagnosis improvements were very promising (see Figure \ref{fig:StudyIIISlopeResults}). However, the test population was not diverse. Therefore the system should be tested on a larger population to get more accurate results.
+\linebreak
 
 \begin{figure}[htbp]
 \centering

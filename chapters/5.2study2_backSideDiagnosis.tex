@@ -43,7 +43,7 @@ In this section, there was no significant change in the end-user application, on
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.41\columnwidth]{figures/UserApplicationStudyIChanges.jpeg}}
+\fbox{\includegraphics[width=.35\columnwidth]{figures/UserApplicationStudyIChanges.jpeg}}
 \caption{Minor changes in end-user application in Study I}
 \label{fig:UserApplicationStudyIChanges}
 \end{figure}
@@ -101,16 +101,18 @@ In this section, the test and evaluation process of the prototype system, which 
 
 In the second study, test data are collected through mobile applications under the supervision of healthcare professionals. Therefore, the collected data are evaluated before the procedure. In addition, a document describing how to use the application was given to the healthcare professionals.
 
-The prototype was used by 9 participants, where 3 (33.33 percent) of them were female, and the remaining 6 (66,67 percent) were male, with an average age of 22.6 (see Table \ref{tab:StudyIIParticipantStatistics} for details). Data was stored in an online database which is described in section \ref{sec:StudyIAnalysisAndDesign}.
-
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.65\columnwidth]{figures/StudyIIParticipantsBMITypeDistribution.png}}
+\fbox{\includegraphics[width=.60\columnwidth]{figures/StudyIIParticipantsBMITypeDistribution.png}}
 \caption{Participants BMI type distribution based on CDC in study II}
 \label{fig:StudyIIParticipantsBMITypeDistribution}
 \end{figure}
 
+The prototype was used by 9 participants, where 3 (33.33 percent) of them were female, and the remaining 6 (66,67 percent) were male, with an average age of 22.6 (see Table \ref{tab:StudyIIParticipantStatistics} for details). Data was stored in an online database which is described in section \ref{sec:StudyIAnalysisAndDesign}.
+
 BMI is critical as most index calculations are based on the ratio to eliminate the effects of weight. Population's average BMI is 23.2 (healthy weight), (see Figure \ref{fig:StudyIIParticipantsBMITypeDistribution}). Therefore, this might not provide sufficient data for projection in different wight scales.
+
+All 18 photos collected in the application were used because during the collection of photos all users are supervised by healthcare professionals. In addition, deformety types of the users were validated in the examination by healthcare professionals before sended to the system (see Figure  \ref{fig:StudyIIFootDeformityTypeDistribution}).
 
 \begin{figure}[htbp]
 \centering
@@ -119,7 +121,8 @@ BMI is critical as most index calculations are based on the ratio to eliminate t
 \label{fig:StudyIIFootDeformityTypeDistribution}
 \end{figure} 
 
-All 18 photos collected in the application were used because during the collection of photos all users are supervised by healthcare professionals. In addition, deformety types of the users were validated in the examination by healthcare professionals before sended to the system (see Figure  \ref{fig:StudyIIFootDeformityTypeDistribution}).
+
+After the data collection, automated index calculations are conducted. Initial results showed that the findings of the healthcare officials and the system were 27,7 percent matched. This low performance may be caused by multiple factors such as image angle, color disorientation, assumptions in point location determination. However, it was thought that the biggest effect in the evaluations was the sensitivity of the Rear foot angle to the calculation error. Because this calculation only determines the deformity according to a difference of 5 degrees. It is very difficult to detect this 5 degree difference in the photos taken via the mobile application (see Figure \ref{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}). 
 
 \begin{figure}[htbp]
 \centering
@@ -127,5 +130,3 @@ All 18 photos collected in the application were used because during the collecti
 \caption{Rear foot angle vs foot deformity in automated process results}
 \label{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}
 \end{figure} 
-
-After the data collection, automated index calculations are conducted. Initial results showed that the findings of the healthcare officials and the system were 27,7 percent matched. This low performance may be caused by multiple factors such as image angle, color disorientation, assumptions in point location determination. However, it was thought that the biggest effect in the evaluations was the sensitivity of the Rear foot angle to the calculation error. Because this calculation only determines the deformity according to a difference of 5 degrees. It is very difficult to detect this 5 degree difference in the photos taken via the mobile application (see Figure \ref{fig:StudyIIFootDeformityAutomatedDegreesAndDeformityResults}). 
