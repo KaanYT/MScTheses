@@ -1,27 +1,2 @@
-
-
-\setcounter{equation}{0}
-
 \appendix
-%\addcontentsline{toc}{chapter}{\numberline{}Appendix}
 
-
-%% this part is used to remove table and figure in the appendix from the list of tables and figure so don't delete it
-\let\svaddcontentsline\addcontentsline
-\renewcommand\addcontentsline[3]{%
-  \ifthenelse{\equal{#1}{lof}}{}%
-  {\ifthenelse{\equal{#1}{lot}}{}{\svaddcontentsline{#1}{#2}{#3}}}}
-  
-%%  you can make change after this line %%
-  
-
-
-
-
-
-%%\begin{figure}[htbp]
-%%\centering
-%%\fbox{\includegraphics[width=.8\columnwidth]{figures/DNAhelical.eps}}
-%%\caption{Structure of DNA, single stand and double helix.}
-%%\label{fig:DNAhelical2}
-%%\end{figure}

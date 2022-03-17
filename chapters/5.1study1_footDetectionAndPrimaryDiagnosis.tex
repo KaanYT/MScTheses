@@ -51,7 +51,7 @@ Finally, the foot information collection part should focus on detecting pes plan
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.9\columnwidth]{KaanEksenMSc/figures/PredictionModuleSequenceDiagram.png}}
+\fbox{\includegraphics[width=.9\columnwidth]{figures/PredictionModuleSequenceDiagram.png}}
 \caption{Prediction module sequence diagram}
 \label{fig:PredictionModuleSequenceDiagram}
 \end{figure}
@@ -154,7 +154,7 @@ Both end-user applications use the same user flow with corresponding platform UI
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.4\columnwidth]{KaanEksenMSc/figures/UserApplicationValidations.png}}
+\fbox{\includegraphics[width=.4\columnwidth]{figures/UserApplicationValidations.png}}
 \caption{User application validations (iOS)}
 \label{fig:UserApplicationValidations}
 \end{figure}
@@ -165,7 +165,7 @@ The image collection is a fundamentally similar process for both clients. This p
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.9\columnwidth]{KaanEksenMSc/figures/UserApplicationOnboarding.png}}
+\fbox{\includegraphics[width=.9\columnwidth]{figures/UserApplicationOnboarding.png}}
 \caption{User application onboarding (iOS)}
 \label{fig:UserApplicationOnboarding}
 \end{figure}
@@ -200,14 +200,14 @@ The specialist interface is designed to work in two cycles. In the first cycle, 
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.8\columnwidth]{KaanEksenMSc/figures/WebApplicationFootPoints.png}}
+\fbox{\includegraphics[width=.8\columnwidth]{figures/WebApplicationFootPoints.png}}
 \caption{Web application critical foot points on image}
 \label{fig:WebApplicationFootPoints}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.9\columnwidth]{KaanEksenMSc/figures/WebApplicationSetFootDeformity.png}}
+\fbox{\includegraphics[width=.9\columnwidth]{figures/WebApplicationSetFootDeformity.png}}
 \caption{Web application foot deformity options}
 \label{fig:WebApplicationSetFootDeformity}
 \end{figure}
@@ -216,7 +216,7 @@ The second cycle provides calculated results so that healthcare officials can ma
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{KaanEksenMSc/figures/WebApplicationCriticalPointAssistance.png}}
+\fbox{\includegraphics[width=.6\columnwidth]{figures/WebApplicationCriticalPointAssistance.png}}
 \caption{Web application critical point assistance}
 \label{fig:WebApplicationCriticalPointAssistance}
 \end{figure}
@@ -225,7 +225,7 @@ The web application contains validations to ensure current diagnosis. Thus, the 
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{KaanEksenMSc/figures/WebApplicationInformationBoxes.png}}
+\fbox{\includegraphics[width=.6\columnwidth]{figures/WebApplicationInformationBoxes.png}}
 \caption{Web application information boxes}
 \label{fig:WebApplicationInformationBoxes}
 \end{figure}
@@ -243,7 +243,7 @@ The initial step requires finding the foot in the image, also called the region 
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.7\columnwidth]{KaanEksenMSc/figures/DeepLearningTest.jpeg}}
+\fbox{\includegraphics[width=.7\columnwidth]{figures/DeepLearningTest.jpeg}}
 \caption{Deep learning test - DeepLab, FCN, YOLO, Skin, MIDAS (left to right)}
 \label{fig:DeepLearningTest}
 \end{figure}
@@ -252,7 +252,7 @@ The foot detection rate of the algorithms might not be as accredited as the anno
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{KaanEksenMSc/figures/BatchProcessMinimumBoundingBox.png}}
+\fbox{\includegraphics[width=.6\columnwidth]{figures/BatchProcessMinimumBoundingBox.png}}
 \caption{Batch process minimum bounding box (green line)}
 \label{fig:BatchProcessMinimumBoundingBox}
 \end{figure}
@@ -263,7 +263,7 @@ The second step deals with image preparation. After potential barefoot is detect
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{KaanEksenMSc/figures/BatchProcessPerspectiveTransformation.png}}
+\fbox{\includegraphics[width=.6\columnwidth]{figures/BatchProcessPerspectiveTransformation.png}}
 \caption{Batch process perspective transformation}
 \label{fig:BatchProcessPerspectiveTransformation}
 \end{figure}
@@ -272,7 +272,7 @@ After the perspective transformation (see Figure \ref{fig:BatchProcessPerspectiv
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{KaanEksenMSc/figures/BatchProcessSobelOutput.jpg}}
+\fbox{\includegraphics[width=.6\columnwidth]{figures/BatchProcessSobelOutput.jpg}}
 \caption{Batch Process - Sobel - Absolute Gradient X, Absolute Gradient Y, Magnitude Gradient, Directional Gradient - Left To Right}
 \label{fig:BatchProcessSobelOutput}
 \end{figure}
@@ -288,7 +288,7 @@ The final stage includes edge detection and functionalization of the sole. The s
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{KaanEksenMSc/figures/BatchProcessEdge.jpeg}}
+\fbox{\includegraphics[width=.6\columnwidth]{figures/BatchProcessEdge.jpeg}}
 \caption{Batch process Sobel combined}
 \label{fig:BatchProcessEdge}
 \end{figure}
@@ -297,27 +297,30 @@ After applying each configuration to the transformed image, results are merged i
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.6\columnwidth]{KaanEksenMSc/figures/BatchProcessLine.jpeg}}
+\fbox{\includegraphics[width=.6\columnwidth]{figures/BatchProcessLine.jpeg}}
 \caption{Batch process polynomial function}
 \label{fig:BatchProcessLine}
 \end{figure}
 
 After the edges are extracted, polynomial regression is applied to generate the polynomial function of the solo. In addition, the fifth-order (quintic) polynomial function is selected to get matching curves of the solo. Furthermore, polynomial regression is applied with predefined windows(see Figure \ref{fig:BatchProcessLine}) because curve transitions will become smoother.
 
-\begin{algorithm}
+\begin{algorithm}[htbp]
 \caption{Merging Sobel results}\label{alg:CombinedSobelResults}
-\begin{algorithmic}
+\label{alg:pca}
+\hspace{1cm}\framebox[13.5cm][c]{\begin{minipage}{13.25cm}
+\begin{algorithmic}[0]
 
-\STATE $ABS_X \gets Absolute Gradient X$
-\STATE $ABS_Y \gets Absolute Gradient Y$
-\STATE $MAG \gets Magnitude Gradient$
-\STATE $DIR \gets Directional Gradient$
+\State $ABS_X \gets Absolute Gradient X$
+\State $ABS_Y \gets Absolute Gradient Y$
+\State $MAG \gets Magnitude Gradient$
+\State $DIR \gets Directional Gradient$
 
-\FORALL{$pixcel\in image$}
-    \STATE $pixcel \gets (ABS_X \AND ABS_Y) \OR (MAG \AND DIR)$
-\ENDFOR
+\For{$pixcel\in image$}
+    \State $pixcel \gets (ABS_X \And ABS_Y)\ \Or\ (MAG \And DIR)$
+\EndFor
 
 \end{algorithmic}
+\end{minipage}}
 \end{algorithm}
 
 Critical locations on the foot will be located based on the solo function. For example, the metatarsal point is based on the solo function's second increase. In addition, The bottom-left and bottom-right positions of the foot will be located with the solo function and minimum bounding box.
@@ -332,7 +335,7 @@ The database was divided into eight major table groups based on usage and connec
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=1.0\columnwidth]{KaanEksenMSc/figures/DatabaseGeneralView.png}}
+\fbox{\includegraphics[width=0.98\columnwidth]{figures/DatabaseGeneralView.png}}
 \caption{General view of database}
 \label{fig:DatabaseGeneralView}
 \end{figure}
@@ -341,7 +344,7 @@ User table group were explicitly designed for all application users, which inclu
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.7\columnwidth]{KaanEksenMSc/figures/DatabaseUser.png}}
+\fbox{\includegraphics[width=.7\columnwidth]{figures/DatabaseUser.png}}
 \caption{Database user group table}
 \label{fig:DatabaseUser}
 \end{figure}
@@ -350,7 +353,7 @@ The diagnosis table group focuses on foot diagnosis and detailed calculations me
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.9\columnwidth]{KaanEksenMSc/figures/DatabaseDiagnosis.png}}
+\fbox{\includegraphics[width=.9\columnwidth]{figures/DatabaseDiagnosis.png}}
 \caption{Database diagnosis group table}
 \label{fig:DatabaseDiagnosis}
 \end{figure}
@@ -359,7 +362,7 @@ The ScanFileInfo, FootScan, File table groups were designed to record patient as
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.7\columnwidth]{KaanEksenMSc/figures/DatabaseFiles.png}}
+\fbox{\includegraphics[width=.7\columnwidth]{figures/DatabaseFiles.png}}
 \caption{Database files group}
 \label{fig:DatabaseFiles}
 \end{figure}
@@ -375,7 +378,6 @@ In the first study, the test data were collected through mobile applications wit
 \begin{table}[htbp]
 \begin{center}
 \caption{Participant statistics in study I}
-\vspace{23pt}
       \begin{tabular}{|c|c|c|c|c|} \hline
           & \textbf{Age} & \textbf{Weight} & \textbf{Height} & \textbf{BMI} \\ \hline
         \textbf{Avarage} & 24.06 & 75.15 & 173.18 & 24.91 \\ \hline
@@ -390,7 +392,7 @@ The prototype was used by 34 participants, where 12 (35.29 percent) of them were
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.65\columnwidth]{KaanEksenMSc/figures/StudyIParticipantsBMITypeDistribution.png}}
+\fbox{\includegraphics[width=.65\columnwidth]{figures/StudyIParticipantsBMITypeDistribution.png}}
 \caption{Participants BMI type distribution based on CDC in study I}
 \label{fig:StudyIParticipantsBMITypeDistribution}
 \end{figure}
@@ -401,7 +403,7 @@ The data collected from the users included 68 photos, 61 of them were used, but 
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.65\columnwidth]{KaanEksenMSc/figures/StudyICriticalPointResult.png}}
+\fbox{\includegraphics[width=.65\columnwidth]{figures/StudyICriticalPointResult.png}}
 \caption{Critical point results on study I}
 \label{fig:StudyICriticalPointResult}
 \end{figure}
@@ -410,7 +412,7 @@ After the physician results were collected, index calculations were conducted (s
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.65\columnwidth]{KaanEksenMSc/figures/StudyIIndexErrorNormalDists.png}}
+\fbox{\includegraphics[width=.65\columnwidth]{figures/StudyIIndexErrorNormalDists.png}}
 \caption{Index error normal distribution in study I}
 \label{fig:StudyIIndexErrorNormalDists}
 \end{figure}
@@ -421,7 +423,7 @@ Therefore, the system index errors were calculated, and normal distribution was 
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=.65\columnwidth]{KaanEksenMSc/figures/StudyILenghtErrorNormalDists.png}}
+\fbox{\includegraphics[width=.65\columnwidth]{figures/StudyILenghtErrorNormalDists.png}}
 \caption{Length error normal distribution in study I}
 \label{fig:StudyILenghtErrorNormalDists}
 \end{figure}
